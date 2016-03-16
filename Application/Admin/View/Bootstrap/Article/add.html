@@ -1,0 +1,39 @@
+<extend name="Layout/base"/>
+<block name="current">添加文章</block>
+<block name="breadcrumb">
+    <li><a href=":U('Article/index')"><i class="fa fa-book"></i>&nbsp;文章管理</a></li>
+    <li class="active">添加文章</li>
+</block>
+<block name="content">
+    <form class="form-horizontal" action="{:U('Article/add')}" method="post">
+        <fieldset>
+            <legend class="">添加文章</legend>
+
+            <div class="control-group">
+                <label class="control-label" for="title">文章标题</label>
+                <div class="controls">
+                    <input type="text" name="title" id="title" placeholder="文章标题" class="form-control small" required>
+                    <p class="help-block"></p>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">文章内容</label>
+                <div class="controls">
+                    <div class="textarea">
+                        <textarea name="content" class="small" required> </textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label"></label>
+                <div class="controls">
+                    <button type="submit" class="btn btn-success">提交</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</block>
+
+

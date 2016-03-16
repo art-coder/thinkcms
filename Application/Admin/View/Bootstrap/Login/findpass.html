@@ -1,0 +1,47 @@
+<include file="Layout/header" />
+<include file="Layout/browse" />
+<include file="Layout/nav" />
+<div class="container login-container">
+    <form action="{:U('index')}" method="post" role="form" class="form-horizontal">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="panel panel-default panel-pure">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">账号登录</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <input type='text' name='username' placeholder="账号" value='' class='form-control input-lg' />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                                <input type='password' name='password' placeholder="密码" value='' class='form-control input-lg' />
+                            </div>
+                        </div>
+                        <if condition="$error">
+                            <div class="alert alert-warning alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <p>
+                                    <foreach name="error" item="val">
+                                        {$val}<br/>
+                                    </foreach>
+                                </p>
+                            </div>
+                        </if>
+                    </div>
+                    <div class="panel-footer">
+                        <input type="submit" class="btn btn-primary btn-wider" value="登录" data-loading="稍候...">
+                        &nbsp; &nbsp;<a href="{:U('findpass')}">忘记密码</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </form>
+</div>
+<include file="Layout/footer" />

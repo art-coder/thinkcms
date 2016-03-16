@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+关于D('user')模型(model)加载
+1.优先加载模块(Home)下Model中的UserModel模型，如果没有，则加载Common/Model下的UserModel模型(命名空间必须正确)
+2.如果在App下直接建立Model模块然后写Model层是不正确的，虽然能够正确加载，但是不能使用诸如D方法(使用后不是预期的效果)，原因很简单，Model也被当成了一个模块而已
+3.调用Common中Model下的模型，大小写敏感，D('User')，user的首字母必须大写，如果是本模块下的模型，则不需要
+
+
+
+</body>
+</html>

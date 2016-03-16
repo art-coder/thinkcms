@@ -1,0 +1,46 @@
+<div class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="javascript:void(0);" class="navbar-brand ">
+                <i class="fa fa-leaf"></i>
+                <span class="brand-title">{:get_web_name()}<small>后台管理系统</small></span>
+            </a>
+        </div>
+        <if condition="check_admin_login()">
+            <ul class="nav navbar-nav">
+                {:get_nav()}
+            </ul>
+            <div class="collapse navbar-collapse">
+                <!-- 导航中的表单 -->
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">用户 <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">文章</a></li>
+                                <li><a href="#">评论</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">后台用户</a></li>
+                            </ul>
+                        </div>
+                        <input type="text" class="form-control" aria-label="...">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-default" type="button">搜索</button>
+                        </span>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">{$Think.session.userinfo.username} <b class="caret"></b></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{:U('Setting/index')}"><i class="fa fa-key"></i>&nbsp;修改密码</a></li>
+                            <li><a href="{:U('Setting/show')}"><i class="fa fa-info-circle"></i>&nbsp;修改资料</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{:U('Login/logout')}"><i class="fa fa-power-off"></i>&nbsp;退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </if>
+    </div>
+</div>
