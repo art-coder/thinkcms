@@ -8,7 +8,6 @@ namespace Admin\Controller;
 
 use Common\Controller\BaseController;
 
-
 class LoginController extends BaseController
 {
 
@@ -31,14 +30,14 @@ class LoginController extends BaseController
         $this->redirect('Login/index');
     }
 
-    public function findpass(){
+    public function findpass()
+    {
         $this->display();
     }
 
-
-    public function test(){
+    public function test()
+    {
         show_bug(get_defined_constants(true));
     }
 
 }
-

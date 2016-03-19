@@ -15,15 +15,18 @@ class AddonsController extends AdminController
         $this->display();
     }
 
-    public function add(){
+    public function add()
+    {
         $this->display();
     }
 
-    public function edit(){
+    public function edit()
+    {
         $this->display();
     }
 
-    public function recycle(){
+    public function recycle()
+    {
         $this->display();
     }
 

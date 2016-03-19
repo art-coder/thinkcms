@@ -11,12 +11,13 @@ use Common\Controller\BaseController;
 class AdminController extends BaseController
 {
 
-
     public function _initialize()
     {
         // 验证是否登录后台
-        if (!check_admin_login())
+        if (!check_admin_login()) {
             $this->redirect('Login/index');
+        }
+
     }
 
 }

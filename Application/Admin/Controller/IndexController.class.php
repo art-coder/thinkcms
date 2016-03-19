@@ -11,11 +11,13 @@ class IndexController extends AdminController
         $this->display();
     }
 
-    public function web(){
+    public function web()
+    {
         $this->display();
     }
 
-    public function test(){
+    public function test()
+    {
         $this->display();
     }
 

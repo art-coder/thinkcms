@@ -4,7 +4,6 @@ namespace Admin\Controller;
 
 use Common\Controller\BaseController;
 
-
 class UserController extends BaseController
 {
 
@@ -13,16 +12,18 @@ class UserController extends BaseController
         $this->display();
     }
 
-    public function add(){
+    public function add()
+    {
         $this->display();
     }
 
-    public function recycle(){
+    public function recycle()
+    {
         $this->display();
     }
 
-
-    public function test(){
+    public function test()
+    {
         show_bug(get_defined_constants(true));
     }
 
