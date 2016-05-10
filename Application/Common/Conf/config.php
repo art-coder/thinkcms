@@ -40,6 +40,7 @@ return array(
         '__CSS__'    => __ROOT__ . '/Public/DEFAULT_THEME/css',
         '__JS__'     => __ROOT__ . '/Public/DEFAULT_THEME/js',
         '__THEME__'     => __ROOT__ . '/Public/DEFAULT_THEME',
+        '__PLUGINS__'     => __ROOT__ . '/Public/Plugins',
     ),
 
 

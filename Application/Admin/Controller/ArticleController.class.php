@@ -6,13 +6,11 @@ use Think\Controller;
 class ArticleController extends AdminController
 {
 
-    public function index()
-    {
+    public function index() {
         $this->display();
     }
 
-    public function add()
-    {
+    public function add() {
         if (IS_POST) {
             $title = I('post.title');
             $content = I('post.content');
@@ -41,13 +39,11 @@ class ArticleController extends AdminController
         $this->display();
     }
 
-    public function edit()
-    {
+    public function edit() {
         $this->display();
     }
 
-    public function recycle()
-    {
+    public function recycle() {
         $this->display();
     }
 
