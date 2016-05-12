@@ -48,7 +48,37 @@ class ArticleController extends AdminController
     }
 
     public function edit() {
-        $this->display();
+        if (IS_POST) {
+            $title = I('post.title');
+            $content = I('post.content');
+            $id = I('post.aid');
+            $error = [];
+            if (!$title) {
+                $error['title'] = '文章标题必填！';
+            }
+            if (!$content) {
+                $error['content'] = '文章内容必填！';
+            }
+            if ($error) {
+                $this->error = $error;
+            } else {
+                $Article = M("article");
+                $Article->title = $title;
+                $Article->content = $content;
+                $Article->updated = time();
+                $Article->where('id=' . intval($id))->save();
+                $this->redirect('Article/index');
+            }
+        } else {
+            $id = I('get.id');
+            $article = M('article')->find($id);
+            if ($article) {
+                $this->assign('article', $article);
+                $this->display();
+            } else {
+                $this->redirect(U('index'));
+            }
+        }
     }
 
     public function recycle() {

@@ -1,15 +1,17 @@
 <?php
 
-function show_bug($var)
-{
+function show_bug($var) {
     echo '<pre>';
-    var_dump($var);
+    if (is_array($var)) {
+        print_r($var);
+    } else {
+        var_dump($var);
+    }
     echo '</pre>';
 }
 
 
-function get_instance($app = '')
-{
+function get_instance($app = '') {
     static $_instace;
     if (!$app) {
         if ($_instace) {
@@ -25,8 +27,7 @@ function get_instance($app = '')
 /**
  * 设置主题
  */
-function set_theme($theme = '')
-{
+function set_theme($theme = '') {
     //判断是否存在设置的模板主题
     if (empty($theme)) {
         $theme_name = C('DEFAULT_THEME');
@@ -51,13 +52,11 @@ function set_theme($theme = '')
 /**
  * 获取网站名称
  */
-function get_web_name()
-{
+function get_web_name() {
     return C('WEB_NAME');
 }
 
 
-function pass_encrypt($pass)
-{
+function pass_encrypt($pass) {
     return D('Manage')->passEncrypt($pass);
 }
