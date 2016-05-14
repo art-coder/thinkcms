@@ -60,3 +60,34 @@ function get_web_name() {
 function pass_encrypt($pass) {
     return D('Manage')->passEncrypt($pass);
 }
+
+function get_pages($model, $condition, $now_page, $page_size = 10) {
+    $where = '';
+    if (isset($condition['where'])) {
+        $where = $condition['where'];
+    }
+    $order = '';
+    if (isset($condition['order'])) {
+        $order = $condition['order'];
+    }
+    if ($where) {
+        $count = $model->where($where)->count();
+    } else {
+        $count = $model->count();
+    }
+    if ($where && $order) {
+        $list = $model->where($where)->order($order)->page(intval($now_page), $page_size)->select();
+    } elseif ($where && !$order) {
+        $list = $model->where($where)->page(intval($now_page), $page_size)->select();
+    } elseif (!$where && $order) {
+        $list = $model->order($order)->page(intval($now_page), $page_size)->select();
+    } else {
+        $list = $model->page(intval($now_page), $page_size)->select();
+    }
+    $Page = new \Org\BootstrapPage($count, $page_size);
+    $show = $Page->show();// 分页显示输出
+    return [
+        'list' => $list,
+        'page' => $show,
+    ];
+}

@@ -8,13 +8,9 @@ class ArticleController extends AdminController
 
     public function index() {
         $article = M('article');
-        $page_num = 4;
-        $list = $article->where('status=1')->order('id desc')->page(intval(I('get.p')), $page_num)->select();
-        $this->assign('list', $list);// 赋值数据集
-        $count = $article->where('status=1')->count();// 查询满足要求的总记录数
-        $Page = new \Think\Page($count, $page_num);// 实例化分页类 传入总记录数和每页显示的记录数
-        $show = $Page->show();// 分页显示输出
-        $this->assign('page', $show);// 赋值分页输出
+        $pages = get_pages($article, ['where' => 'status=1', 'order' => 'id desc'], intval(I('get.p')));
+        $this->assign('list', $pages['list']);
+        $this->assign('page', $pages['page']);
         $this->display();
     }
 
