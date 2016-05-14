@@ -81,4 +81,15 @@ class ArticleController extends AdminController
         $this->display();
     }
 
+    public function delete() {
+        $id = intval(I('get.id'));
+        if (!$id) {
+            $this->redirect('index');
+        }
+        $result = M('article')->where('id=' . $id)->save(['status' => 0]);
+        if ($result) {
+            $this->redirect('index');
+        }
+    }
+
 }
