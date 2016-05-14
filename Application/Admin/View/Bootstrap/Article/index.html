@@ -22,7 +22,7 @@
                 <td>{:date('Y-m-d H:i:s', $vo['created'])}</td>
                 <td>
                     <a href="{:U('Article/edit', ['id' => $vo['id']])}">编辑</a>
-                    | <a href="{:U('Article/delete', ['id' => $vo['id']])}">删除</a>
+                    | <a href="{:U('Article/operate', ['mode' => 'recycle', 'id' => $vo['id']])}">删除</a>
                     | <a target="_blank" href="{:U('Home/Html/show', ['id' => $vo['id']], true, true)}">查看</a></td>
             </tr>
         </foreach>

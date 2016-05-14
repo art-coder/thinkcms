@@ -97,12 +97,14 @@ class BootstrapPage
         //上一页
         $up_row = $this->nowPage - 1;
         $up_page_class = $up_row > 0 ? '' : 'disabled';
-        $up_page = '<li class="' . $up_page_class . '"><a href="' . $this->url($up_row) . '">' . $this->config['prev'] . '</a></li>';
+        $up_row_href = $up_page_class ? 'javascript:;' : $this->url($up_row);
+        $up_page = '<li class="' . $up_page_class . '"><a href="' . $up_row_href . '">' . $this->config['prev'] . '</a></li>';
 
         //下一页
         $down_row = $this->nowPage + 1;
         $down_page_class = ($down_row <= $this->totalPages) ? '' : 'disabled';
-        $down_page = '<li class="' . $down_page_class . '"><a href="' . $this->url($down_row) . '">' . $this->config['next'] . '</a></li>';
+        $down_row_href = $down_page_class ? 'javascript:;' : $this->url($down_row);
+        $down_page = '<li class="' . $down_page_class . '"><a href="' . $down_row_href . '">' . $this->config['next'] . '</a></li>';
 
         //第一页
         $the_first = '';

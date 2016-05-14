@@ -78,17 +78,39 @@ class ArticleController extends AdminController
     }
 
     public function recycle() {
+        $article = M('article');
+        $pages = get_pages($article, ['where' => 'status=0', 'order' => 'id desc'], intval(I('get.p')));
+        $this->assign('list', $pages['list']);
+        $this->assign('page', $pages['page']);
         $this->display();
     }
 
-    public function delete() {
+    public function operate() {
         $id = intval(I('get.id'));
         if (!$id) {
             $this->redirect('index');
         }
-        $result = M('article')->where('id=' . $id)->save(['status' => 0]);
-        if ($result) {
-            $this->redirect('index');
+        switch (I('get.mode')) {
+            case 'recycle':
+                $result = M('article')->where('id=' . $id)->save(['status' => 0]);
+                if ($result) {
+                    $this->redirect('index');
+                }
+                break;
+            case 'recover':
+                $result = M('article')->where('id=' . $id)->save(['status' => 1]);
+                if ($result) {
+                    $this->redirect('index');
+                }
+                break;
+            case 'delete':
+                $result = M('article')->where('id=' . $id)->delete();;
+                if ($result) {
+                    $this->redirect('recycle');
+                }
+                break;
+            default :
+                $this->redirect('index');
         }
     }
 
