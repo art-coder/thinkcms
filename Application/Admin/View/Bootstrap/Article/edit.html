@@ -45,7 +45,7 @@
     </script>
 </block>
 
-<block name="current">添加文章</block>
+<block name="current">修改文章</block>
 
 <block name="breadcrumb">
     <li><a href="{:U('Article/index')}"><i class="fa fa-book"></i>&nbsp;文章管理</a></li>
@@ -54,38 +54,6 @@
 
 <block name="content">
     <form class="form-horizontal" action="{:U('Article/edit')}" method="post">
-        <fieldset>
-            <legend class="">修改文章</legend>
-            <input type="hidden" value="{$article.id}" name="aid"/>
-            
-            <div class="control-group">
-                <label class="control-label" for="title">文章标题</label>
-
-                <div class="controls">
-                    <input type="text" value="{$article.title}" name="title" id="title" placeholder="文章标题" class="form-control small" required>
-
-                    <p class="help-block"></p>
-                </div>
-            </div>
-
-            <div class="control-group">
-                <label class="control-label">文章内容</label>
-
-                <div class="controls">
-                    <div class="textarea">
-                        <div id="editormd"><textarea name="content" class="small" style="display:none;"
-                                                     required>{$article.content}</textarea></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="control-group">
-                <label class="control-label"></label>
-
-                <div class="controls">
-                    <button type="submit" class="btn btn-success">提交</button>
-                </div>
-            </div>
-        </fieldset>
+        <include file="form" />
     </form>
 </block>

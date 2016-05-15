@@ -91,3 +91,27 @@ function get_pages($model, $condition, $now_page, $page_size = 10) {
         'page' => $show,
     ];
 }
+
+function save_admin_flash_msg($msg, $type = 'success') {
+    $flash_name = session_id();
+    $save = F($flash_name);
+    if (isset($save[$type])) {
+        array_push($save[$type], $msg);
+    } else {
+        $save[$type][] = $msg;
+    }
+    F($flash_name, $save);
+}
+
+function get_admin_flash_msg() {
+    $flash_name = session_id();
+    $data = F($flash_name);
+    F($flash_name, null);
+    return $data;
+}
+
+function getAdminSignInUid() {
+    return session('userinfo.id');
+}
+
+

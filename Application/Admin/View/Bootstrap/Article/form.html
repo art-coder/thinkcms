@@ -1,0 +1,28 @@
+<fieldset>
+    <div class="control-group">
+        <label class="control-label" for="title">文章标题</label>
+        <input type="hidden" value="{$data['id'] ? $data['id'] : ''}" name="id"/>
+        <div class="controls">
+            <input type="text" value="{$data['title'] ? $data['title'] : ''}" name="title" id="title"
+                   placeholder="文章标题"
+                   class="form-control small" required>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label">文章内容</label>
+
+        <div class="controls">
+            <div class="textarea">
+                <div id="editormd"><textarea name="content" class="small" style="display:none;"
+                                             required>{$data['content'] ? $data['content'] : ''}</textarea></div>
+            </div>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label"></label>
+
+        <div class="controls">
+            <button type="submit" class="btn btn-success">提交</button>
+        </div>
+    </div>
+</fieldset>

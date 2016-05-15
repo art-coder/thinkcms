@@ -10,9 +10,15 @@ use Think\Model;
 class ManageModel extends Model
 {
 
+    protected $_validate = array(
+        //all
+        array('username', 'require', '账号必填！'),
+        // login
+        array('password', 'require', '密码必填！', 1, 'regex', 4),
+    );
+
     // 用户登录
-    public function login($username, $password)
-    {
+    public function login($username, $password) {
         $return = [];
         $result = $this->where(['username' => $username, 'password' => $this->passEncrypt($password)])->find();
         if ($result) {
@@ -29,19 +35,19 @@ class ManageModel extends Model
         } else {
             $return['username'] = '用户名或密码错误！';
         }
+
         return $return;
     }
 
-    public function checkAdminLogin()
-    {
-        if (session('userinfo'))
+    public function checkAdminLogin() {
+        if (session('userinfo')) {
             return true;
-        else
+        } else {
             return false;
+        }
     }
 
-    public function setSession($userinfo)
-    {
+    public function setSession($userinfo) {
         unset($userinfo['status']);
         unset($userinfo['password']);
         unset($userinfo['updated']);
@@ -49,13 +55,11 @@ class ManageModel extends Model
         session('userinfo', $userinfo);
     }
 
-    public function passEncrypt($pass)
-    {
+    public function passEncrypt($pass) {
         return md5($pass);
     }
 
-    public function logout()
-    {
+    public function logout() {
         session('userinfo', null);
     }
 

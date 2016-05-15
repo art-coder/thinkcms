@@ -15,10 +15,11 @@ namespace Common\Behavior;
  */
 class AssignBehavior {
 
-    public function run()
-    {
+    public function run() {
         $app = get_instance();
         $app->assignValues('error', $app->error);
+        $flash_msg = get_admin_flash_msg();
+        $app->assignValues('flash_msg', $flash_msg);
     }
 
 }
