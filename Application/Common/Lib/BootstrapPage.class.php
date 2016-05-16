@@ -5,7 +5,7 @@
  */
 
 
-namespace Org;
+namespace Common\Lib;
 
 
 class BootstrapPage
@@ -15,11 +15,11 @@ class BootstrapPage
     public $parameter; // 分页跳转时要带的参数
     public $totalRows; // 总行数
     public $totalPages; // 分页总页面数
-    public $rollPage   = 5;// 分页栏每页显示的页数
+    public $rollPage = 5;// 分页栏每页显示的页数
     public $lastSuffix = true; // 最后一页是否显示总页数
 
-    protected $p       = 'p'; //分页参数名
-    protected $url     = ''; //当前链接URL
+    protected $p = 'p'; //分页参数名
+    protected $url = ''; //当前链接URL
     protected $nowPage = 1;
 
     // 分页显示定制
@@ -36,28 +36,28 @@ class BootstrapPage
 
     /**
      * 架构函数
-     * @param array $totalRows  总的记录数
-     * @param array $listRows  每页显示记录数
-     * @param array $parameter  分页跳转的参数
+     * @param array $totalRows 总的记录数
+     * @param array $listRows 每页显示记录数
+     * @param array $parameter 分页跳转的参数
      */
-    public function __construct($totalRows, $listRows=20, $parameter = array()) {
+    public function __construct($totalRows, $listRows = 20, $parameter = array()) {
         C('VAR_PAGE') && $this->p = C('VAR_PAGE'); //设置分页参数名称
         /* 基础设置 */
-        $this->totalRows  = $totalRows; //设置总记录数
-        $this->listRows   = $listRows;  //设置每页显示行数
-        $this->parameter  = empty($parameter) ? $_GET : $parameter;
-        $this->nowPage    = empty($_GET[$this->p]) ? 1 : intval($_GET[$this->p]);
-        $this->nowPage    = $this->nowPage>0 ? $this->nowPage : 1;
-        $this->firstRow   = $this->listRows * ($this->nowPage - 1);
+        $this->totalRows = $totalRows; //设置总记录数
+        $this->listRows = $listRows;  //设置每页显示行数
+        $this->parameter = empty($parameter) ? $_GET : $parameter;
+        $this->nowPage = empty($_GET[$this->p]) ? 1 : intval($_GET[$this->p]);
+        $this->nowPage = $this->nowPage > 0 ? $this->nowPage : 1;
+        $this->firstRow = $this->listRows * ($this->nowPage - 1);
     }
 
     /**
      * 定制分页链接设置
-     * @param string $name  设置名称
+     * @param string $name 设置名称
      * @param string $value 设置值
      */
-    public function setConfig($name,$value) {
-        if(isset($this->config[$name])) {
+    public function setConfig($name, $value) {
+        if (isset($this->config[$name])) {
             $this->config[$name] = $value;
         }
     }
@@ -166,6 +166,7 @@ class BootstrapPage
                 $this->totalPages
             ),
             $this->config['theme']);
+
         return "<{$this->config['div']} class=\"{$this->config['class']}\">{$page_str}</{$this->config['div']}>";
     }
 

@@ -10,6 +10,8 @@ use Think\Model;
 class ManageModel extends Model
 {
 
+    protected $patchValidate = true;
+
     protected $_validate = array(
         //all
         array('username', 'require', '账号必填！'),

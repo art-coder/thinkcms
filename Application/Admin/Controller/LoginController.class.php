@@ -15,7 +15,9 @@ class LoginController extends BaseController
         if (IS_POST) {
             $Manage = D('Manage');
             if (!$Manage->create($_POST, 4)) {
-                save_admin_flash_msg($Manage->getError(), 'danger');
+				foreach ($Manage->getError() as $error) {
+                    save_admin_flash_msg($error, 'danger');
+                }
             } else {
                 $errors = $Manage->login(I('post.username'), I('post.password'));
                 if ($errors) {

@@ -84,7 +84,7 @@ function get_pages($model, $condition, $now_page, $page_size = 10) {
     } else {
         $list = $model->page(intval($now_page), $page_size)->select();
     }
-    $Page = new \Org\BootstrapPage($count, $page_size);
+    $Page = new \Common\Lib\BootstrapPage($count, $page_size);
     $show = $Page->show();// 分页显示输出
     return [
         'list' => $list,

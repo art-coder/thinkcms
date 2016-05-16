@@ -2,6 +2,7 @@
 namespace Admin\Controller;
 
 use Think\Controller;
+use Common\Lib\Category;
 
 class ArticleController extends AdminController
 {
@@ -15,17 +16,24 @@ class ArticleController extends AdminController
     }
 
     public function add() {
+        $cid = I('post.cid', 0);
         if (IS_POST) {
             $Article = D("Article");
             if (!$Article->create()) {
-                save_admin_flash_msg($Article->getError(), 'danger');
+                foreach ($Article->getError() as $error) {
+                    save_admin_flash_msg($error, 'danger');
+                }
             } else {
                 $Article->add();
                 save_admin_flash_msg('添加文章成功！！！');
                 $this->redirect('index');
             }
         }
+        $category_list = M('category')->order('sort desc')->select();
+        $category_list = Category::toLevel($category_list, '---', 0);
         $this->assign('data', $_POST);
+        $this->assign('cid', $cid);
+        $this->assign('category_list', $category_list);
         $this->display();
     }
 
@@ -34,9 +42,16 @@ class ArticleController extends AdminController
         $Article = D("Article");
         $article = $Article->find($id);
         if ($article) {
+            $category_list = M('category')->order('sort desc')->select();
+            $category_list = Category::toLevel($category_list, '---', 0);
+            $cid = I('post.cid', $article['cid']);
+            $this->assign('cid', $cid);
+            $this->assign('category_list', $category_list);
             if (IS_POST) {// edit
                 if (!($save = $Article->create())) {
-                    save_admin_flash_msg($Article->getError(), 'danger');
+					foreach ($Article->getError() as $error) {
+						save_admin_flash_msg($error, 'danger');
+					}
                     $this->assign('data', $_POST);
                     $this->display();
                 } else {

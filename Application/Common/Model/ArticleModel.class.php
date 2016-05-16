@@ -10,6 +10,8 @@ use Think\Model;
 
 class ArticleModel extends Model
 {
+	
+	protected $patchValidate = true;
 
     protected $_validate = array(
         // all
