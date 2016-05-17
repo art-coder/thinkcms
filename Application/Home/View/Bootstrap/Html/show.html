@@ -5,8 +5,18 @@
 </block>
 
 <block name="content">
-    <div id="article-render"></div>
-    <textarea id="article-source" style="display: none;">{$article.content}</textarea>
+    <div class="article-content">
+        <if condition="$article['abstract']">
+            <blockquote>{:htmlspecialchars_decode($article['abstract'])}</blockquote>
+        </if>
+        <if condition="$article['thumbnail']">
+            <div class="featured-media">
+                <img max-witdh="500" class="thumbnail" src="{$article['thumbnail']}" alt=""/>
+            </div>
+        </if>
+        <div id="article-render"></div>
+        <textarea id="article-source" style="display: none;">{$article.content}</textarea>
+    </div>
 </block>
 
 <block name="script">

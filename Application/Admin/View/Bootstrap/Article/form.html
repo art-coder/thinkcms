@@ -5,7 +5,7 @@
         <div class="controls">
             <input type="text" value="{$data['title'] ? $data['title'] : ''}" name="title" id="title"
                    placeholder="文章标题"
-                   class="form-control small" required>
+                   class="form-control" required>
         </div>
     </div>
     <div class="control-group">
@@ -19,6 +19,22 @@
                     </option>
                 </foreach>
             </select>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="title">缩略图</label>
+        <div class="controls">
+            <input type="hidden" id="cancel_upload_thumbnail" value="0" name="cancel_upload_thumbnail"/>
+            <input type="hidden" id="old_thumbnail" value="{$data['thumbnail'] ? $data['thumbnail'] : ''}"
+                   name="old_thumbnail"/>
+            <input id="upload_thumbnail" name="upload_thumbnail" class="projectfile" type="file" multiple
+                   data-max-file-count="1">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label">内容简介</label>
+        <div class="controls">
+            <textarea name="abstract" class="form-control" rows="3">{$data['abstract'] ? $data['abstract'] : ''}</textarea>
         </div>
     </div>
     <div class="control-group">

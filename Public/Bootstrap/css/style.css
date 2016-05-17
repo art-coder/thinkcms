@@ -1,1 +1,4 @@
 body { font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif; padding-top:65px }
+
+.article-content { overflow: hidden; }
+.article-content .featured-media img { width: 100%; }

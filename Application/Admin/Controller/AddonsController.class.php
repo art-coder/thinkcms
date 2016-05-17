@@ -10,24 +10,24 @@ use Think\Controller;
 class AddonsController extends AdminController
 {
 
-    public function index()
-    {
+    public function index() {
         $this->display();
     }
 
-    public function add()
-    {
+    public function add() {
         $this->display();
     }
 
-    public function edit()
-    {
+    public function edit() {
         $this->display();
     }
 
-    public function recycle()
-    {
+    public function recycle() {
         $this->display();
+    }
+
+    public function upload() {
+        print_r($_FILES);
     }
 
 }
