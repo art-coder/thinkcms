@@ -1,7 +1,7 @@
 <extend name="Layout/base"/>
 <block name="current">栏目管理</block>
 <block name="breadcrumb">
-    <li><a href="{:U('Category/index')}"><i class="fa fa-book"></i>&nbsp;栏目管理</a></li>
+    <li><a href="{:U('Category/index')}"><i class="fa fa-columns"></i>&nbsp;栏目管理</a></li>
     <li class="active"><if condition="($action eq 'edit') AND ($category_id gt 0)">编辑栏目<else/>添加栏目</if></li>
 </block>
 <block name="content">
@@ -23,43 +23,16 @@
 
             <div class="col-sm-3">
                 <select name="pid" class="form-control">
-                    <option value="0" {$category_info['pid'] ? '' : 'selected'}>顶级栏目</option>
+                    <option value="0" <if condition="!($category_info['pid'] OR $pid)">selected</if>>顶级栏目</option>
                     <foreach name='category_list' item='v'>
-                        <option value="{$v.id}" {$category_info['pid'] == $v['id'] ? 'selected' : ''}>
-                                {$v.delimiter}{$v.title}
-                        </option>
+                        <option value="{$v.id}" <if condition="$category_info['pid'] eq $v['id'] OR $v['id'] eq $pid">selected</if>>{$v.delimiter}{$v.title}</option>
                     </foreach>
                 </select>
             </div>
         </div>
 
         <div class="form-group">
-            <label class="col-sm-2 control-label">是否开启封面：</label>
-
-            <div class="col-sm-3">
-                <label class="radio-inline">
-                    <input type="radio" class="js_hasCover" name="has_cover" value="1" {$category_info['has_cover'] ? 'checked' : ''}> 是
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" class="js_hasCover" name="has_cover" value="0" {$category_info['has_cover'] ? '' : 'checked'}> 否
-                </label>
-            </div>
-        </div>
-
-        <div class="form-group js_coverBox {$category_info['has_cover'] ? '' : hidden }">
-            <label for="title" class="col-sm-2 control-label">封面图：</label>
-
-            <div class="col-sm-5">
-                <input type="file" name="cover_file" class="form-control small">
-                <input type="hidden" name="cover" value="{$category_info['cover']}"/>
-                <if condition="$category_info['cover']">
-                    <div><img id="js_logoBox" src="{$category_info['cover']}"></div>
-                </if>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="content" class="col-sm-2 control-label">单页内容：</label>
+            <label for="content" class="col-sm-2 control-label">栏目描述：</label>
 
             <div class="col-sm-8">
                 <textarea class="form-control" rows="5" name="content" id="content">{$category_info.content}</textarea>
@@ -108,19 +81,4 @@
             </div>
         </div>
     </form>
-</block>
-
-<block name="script">
-    <script>
-        $(function () {
-            $(".js_hasCover").change(function () {
-                var hasCover = $(".js_hasCover:checked").val();
-                if (hasCover == 1) {
-                    $(".js_coverBox").removeClass('hidden').addClass('show');
-                } else {
-                    $(".js_coverBox").removeClass('show').addClass('hidden');
-                }
-            });
-        })
-    </script>
 </block>

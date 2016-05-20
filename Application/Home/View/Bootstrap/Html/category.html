@@ -1,6 +1,6 @@
 <extend name="Layout/index"/>
-<block name="current">首页</block>
 <block name="content">
+    <blockquote>{$info['content']}</blockquote>
     <ul>
         <foreach name="list" item="item">
             <li><a href="{:U('Html/article', ['id' => $item['id']])}">{$item['title']}</a></li>

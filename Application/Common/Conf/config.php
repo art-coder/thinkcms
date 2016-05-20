@@ -1,7 +1,6 @@
 <?php
 return array(
     //'配置项'=>'配置值'
-    'WEB_NAME' => 'ThinkCMS',
     'CMS_VERSION' => 0.1,// 版本信息
     'URL_MODEL' => '2', //URL模式
     'SHOW_PAGE_TRACE' => true,

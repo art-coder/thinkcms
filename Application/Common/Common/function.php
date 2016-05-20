@@ -53,7 +53,8 @@ function set_theme($theme = '') {
  * 获取网站名称
  */
 function get_web_name() {
-    return C('WEB_NAME');
+    $config = D('Config')->getConfig();
+    return $config['WEB_SITE_TITLE'];
 }
 
 

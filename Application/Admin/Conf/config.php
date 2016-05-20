@@ -52,7 +52,7 @@ return array(
             'level' => 2,
             'items' => [
                 [
-                    'name' => '栏目管理', 'group' => 'Category', 'icon' => 'fa-book', 'lists' => 'Category',
+                    'name' => '栏目管理', 'group' => 'Category', 'icon' => 'fa-columns', 'lists' => 'Category',
                     'items' => [
                         ['name' => '栏目列表', 'uri' => 'Category/index', 'icon' => 'fa-list-alt'],
                         ['name' => '添加栏目', 'uri' => 'Category/add', 'icon' => 'fa-plus-circle'],

@@ -8,6 +8,7 @@
 namespace Common\Model;
 
 use Think\Model;
+use Common\Lib\Category;
 
 class CategoryModel extends Model
 {
@@ -34,6 +35,20 @@ class CategoryModel extends Model
         $id = I('post.id');
 
         return $pid == $id ? false : true;
+    }
+
+    public function getWebCategory() {
+        $list = $this->field('id,pid,title')->order('sort ASC')->where('status=1 AND is_show = 1')->select();
+
+        return Category::toLayer($list);
+    }
+
+    public function getTopMenuCid($category) {
+        if ($category['pid']) {
+            return $this->getTopMenuCid($this->find($category['pid']));
+        } else {
+            return $category['id'];
+        }
     }
 
 }

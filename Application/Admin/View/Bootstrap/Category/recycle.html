@@ -2,7 +2,7 @@
 <block name="current">栏目管理</block>
 <block name="breadcrumb">
     <li><a href="{:U('Category/index')}"><i class="fa fa-columns"></i>&nbsp;栏目管理</a></li>
-    <li class="active">栏目列表</li>
+    <li class="active">栏目回收站</li>
 </block>
 <block name="content">
     <table class="table table-bordered table-striped center">
@@ -43,10 +43,8 @@
                 </td>
                 <td>{$v.sort}</td>
                 <td align="center">
-                    <a class="btn btn-sm btn-default" href="{:U('add', ['pid' => $v['id']])}">添加子栏目 </a>
-                    <a class="btn btn-sm btn-warning" href="{:U('edit', ['id' => $v['id']])}">修改 </a>
-                    <a class="btn btn-sm btn-success" href="{:U('Home/Html/category', ['id' => $v['id']], true, true)}"
-                       target="_blank">预览 </a>
+                    <a class="btn btn-sm btn-warning" href="{:U('edit', ['id' => $v['id']])}">修改</a>
+                    <a class="btn btn-sm btn-danger js-del" data-id="{$v.id}" href="javascript:;">删除</a>
                 </td>
             </tr>
         </foreach>
@@ -58,5 +56,6 @@
     <script>
         change_status('js_update_status', '{:U("operate")}', 'status');
         change_status('js_update_show', '{:U("operate")}', 'show');
+        change_status('js-del', '{:U("operate")}', 'delete');
     </script>
 </block>

@@ -27,7 +27,8 @@ class AddonsController extends AdminController
     }
 
     public function upload() {
-        print_r($_FILES);
+        $upload = new \Common\Lib\Uploads();// 实例化上传类
+        $this->ajaxReturn($upload->img('editormd-image-file'));
     }
 
 }

@@ -11,7 +11,6 @@ class CategoryController extends AdminController
     public function index() {
         $category_list = M('category')->order('sort desc')->select();
         $category_list = Category::toLevel($category_list, '&nbsp;&nbsp;&nbsp;&nbsp;', 0);
-//        show_bug($category_list);
         $this->assign('category_list', $category_list);
         $this->display();
     }
@@ -19,11 +18,7 @@ class CategoryController extends AdminController
     //增加 栏目页面
     public function add() {
         $pid = I('get.pid', 0);
-        $parent_category_info = M('Category')->where(array('id' => $pid))->find();
-        if ($parent_category_info) {
-            $this->assign('pid', $pid);
-            $this->assign('parent_category_info', $parent_category_info);
-        }
+        $this->assign('pid', $pid);
         $category_list = M('category')->order('sort desc')->select();
         $category_list = Category::toLevel($category_list, '---', 0);
         $this->assign('category_list', $category_list);
@@ -75,26 +70,65 @@ class CategoryController extends AdminController
         }
     }
 
-    //更新状态
-    public function change_status() {
-        $id = I('id');
+    public function operate() {
+        $id = intval(I('post.id'));
+        if (!$id) {
+            $this->ajaxReturn(array('status' => 0, 'info' => '非法请求'));
+        }
         $Category = M('Category');
         $category_info = $Category->find($id);
         if (!$category_info) {
-            $this->ajaxReturn(array('info' => '该栏目不存在'));
-        } else {
-            if ($category_info['status']) {
-                $status = 0;
-            } else {
-                $status = 1;
-            }
-            $result = $Category->where(array('id' => $id))->setField('status', $status);
-            if (false != $result) {
-                $this->ajaxReturn(array('status' => 'ok', 'info' => '栏目状态更新成功'));
-            } else {
-                $this->ajaxReturn(array('info' => '栏目状态更新失败'));
-            }
+            $this->ajaxReturn(array('status' => 0, 'info' => '该栏目不存在'));
         }
+        switch (I('post.mode')) {
+            case 'status':
+                if ($category_info['status']) {
+                    $status = 0;
+                } else {
+                    $status = 1;
+                }
+                $result = $Category->where(array('id' => $id))->setField('status', $status);
+                if (false != $result) {
+                    save_admin_flash_msg('栏目状态更新成功(#' . $id . ')！！！');
+                    $this->ajaxReturn(array('status' => 1, 'info' => '栏目状态更新成功'));
+                } else {
+                    $this->ajaxReturn(array('status' => 0, 'info' => '栏目状态更新失败'));
+                }
+                break;
+            case 'show':
+                if ($category_info['is_show']) {
+                    $show = 0;
+                } else {
+                    $show = 1;
+                }
+                $result = $Category->where(array('id' => $id))->setField('is_show', $show);
+                if (false != $result) {
+                    save_admin_flash_msg('栏目是否显示更新成功(#' . $id . ')！！！');
+                    $this->ajaxReturn(array('status' => 1, 'info' => '栏目是否显示更新成功'));
+                } else {
+                    $this->ajaxReturn(array('status' => 0, 'info' => '栏目是否显示更新失败'));
+                }
+                break;
+            case 'delete':
+                $result = $Category->where('id=' . $id)->delete();;
+                if ($result) {
+                    save_admin_flash_msg('彻底删除栏目成功(#' . $id . ')！！！');
+                    $this->ajaxReturn(array('status' => 1, 'info' => '彻底删除栏目成功(#' . $id . ')！！！'));
+                } else {
+                    $this->ajaxReturn(array('status' => 0, 'info' => '彻底删除栏目失败(#' . $id . ')！！！'));
+                }
+                break;
+            default :
+                save_admin_flash_msg('非法请求！！！', 'danger');
+                $this->redirect('index');
+        }
+    }
+
+    public function recycle() {
+        $category_list = M('category')->where('status=0')->order('sort desc')->select();
+        $category_list = Category::toLevel($category_list, '&nbsp;&nbsp;&nbsp;&nbsp;', 0);
+        $this->assign('category_list', $category_list);
+        $this->display();
     }
 
 }
