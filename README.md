@@ -1,3 +1,3 @@
-﻿## 简介
+﻿## ThinkCMS
 
-"# thinkcms" 
+"数据库文件在Database中"
