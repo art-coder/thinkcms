@@ -1,15 +1,17 @@
 <?php
 
-function show_bug($var)
-{
+function show_bug($var) {
     echo '<pre>';
-    var_dump($var);
+    if (is_array($var)) {
+        print_r($var);
+    } else {
+        var_dump($var);
+    }
     echo '</pre>';
 }
 
 
-function get_instance($app = '')
-{
+function get_instance($app = '') {
     static $_instace;
     if (!$app) {
         if ($_instace) {
@@ -25,8 +27,7 @@ function get_instance($app = '')
 /**
  * 设置主题
  */
-function set_theme($theme = '')
-{
+function set_theme($theme = '') {
     //判断是否存在设置的模板主题
     if (empty($theme)) {
         $theme_name = C('DEFAULT_THEME');
@@ -51,13 +52,67 @@ function set_theme($theme = '')
 /**
  * 获取网站名称
  */
-function get_web_name()
-{
-    return C('WEB_NAME');
+function get_web_name() {
+    $config = D('Config')->getConfig();
+    return $config['WEB_SITE_TITLE'];
 }
 
 
-function pass_encrypt($pass)
-{
+function pass_encrypt($pass) {
     return D('Manage')->passEncrypt($pass);
 }
+
+function get_pages($model, $condition, $now_page, $page_size = 10) {
+    $where = '';
+    if (isset($condition['where'])) {
+        $where = $condition['where'];
+    }
+    $order = '';
+    if (isset($condition['order'])) {
+        $order = $condition['order'];
+    }
+    if ($where) {
+        $count = $model->where($where)->count();
+    } else {
+        $count = $model->count();
+    }
+    if ($where && $order) {
+        $list = $model->where($where)->order($order)->page(intval($now_page), $page_size)->select();
+    } elseif ($where && !$order) {
+        $list = $model->where($where)->page(intval($now_page), $page_size)->select();
+    } elseif (!$where && $order) {
+        $list = $model->order($order)->page(intval($now_page), $page_size)->select();
+    } else {
+        $list = $model->page(intval($now_page), $page_size)->select();
+    }
+    $Page = new \Common\Lib\BootstrapPage($count, $page_size);
+    $show = $Page->show();// 分页显示输出
+    return [
+        'list' => $list,
+        'page' => $show,
+    ];
+}
+
+function save_admin_flash_msg($msg, $type = 'success') {
+    $flash_name = session_id();
+    $save = F($flash_name);
+    if (isset($save[$type])) {
+        array_push($save[$type], $msg);
+    } else {
+        $save[$type][] = $msg;
+    }
+    F($flash_name, $save);
+}
+
+function get_admin_flash_msg() {
+    $flash_name = session_id();
+    $data = F($flash_name);
+    F($flash_name, null);
+    return $data;
+}
+
+function getAdminSignInUid() {
+    return session('userinfo.id');
+}
+
+

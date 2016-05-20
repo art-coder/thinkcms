@@ -1,4 +1,49 @@
 <extend name="Layout/base"/>
 <block name="current">后台项目管理</block>
 <block name="content">
+    <div class="panel panel-default">
+        <div class="panel-heading">系统信息</div>
+        <div class="panel-body">
+            <table class="table table-hover">
+                <tbody>
+                <tr>
+                    <td width="150" align="right">服务器操作系统</td>
+                    <td>{$Think.const.PHP_OS}</td>
+                </tr>
+                <tr>
+                    <td width="150" align="right">运行环境</td>
+                    <td>{$_SERVER['SERVER_SOFTWARE']}</td>
+                </tr>
+                <tr>
+                    <td width="150" align="right">MYSQL版本</td>
+                    <php>
+                        $system_info_mysql = M()->query("select version() as v;");
+                    </php>
+                    <td>{$system_info_mysql.0.v}</td>
+                </tr>
+                <tr>
+                    <td width="150" align="right">上传限制</td>
+                    <td>{:ini_get('upload_max_filesize')}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">产品团队</div>
+        <div class="panel-body">
+            <table class="table table-hover">
+                <tbody>
+                <tr>
+                    <td width="150" align="right">总策划</td>
+                    <td>art-coder</td>
+                </tr>
+                <tr>
+                    <td width="150" align="right">github</td>
+                    <td>https://github.com/art-coder</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </block>

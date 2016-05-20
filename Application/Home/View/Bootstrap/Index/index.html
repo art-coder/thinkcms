@@ -1,0 +1,10 @@
+<extend name="Layout/index"/>
+<block name="current">首页</block>
+<block name="content">
+    <ul>
+        <foreach name="list" item="item">
+            <li><a href="{:U('Html/article', ['id' => $item['id']])}">{$item['title']}</a></li>
+        </foreach>
+    </ul>
+    {$page}
+</block>

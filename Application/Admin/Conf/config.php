@@ -13,7 +13,7 @@ return array(
         'relation' => [
             'system' => ['name' => '系统', 'link' => 'Index/index', 'lists' => ['Index']],
             'users' => ['name' => '用户', 'link' => 'Manage/index', 'lists' => ['Manage', 'Group', 'Logs', 'User']],
-            'content' => ['name' => '内容', 'link' => 'Article/index', 'lists'  => ['Article', 'Comment']],
+            'content' => ['name' => '内容', 'link' => 'Article/index', 'lists'  => ['Article', 'Comment', 'Category']],
             'model' => ['name' => '应用', 'link' => 'DB/index', 'lists'  => ['DB', 'Addons']],
         ],
         'system' => [//系统
@@ -51,6 +51,15 @@ return array(
         'content' => [//内容
             'level' => 2,
             'items' => [
+                [
+                    'name' => '栏目管理', 'group' => 'Category', 'icon' => 'fa-columns', 'lists' => 'Category',
+                    'items' => [
+                        ['name' => '栏目列表', 'uri' => 'Category/index', 'icon' => 'fa-list-alt'],
+                        ['name' => '添加栏目', 'uri' => 'Category/add', 'icon' => 'fa-plus-circle'],
+                        ['name' => '编辑栏目', 'uri' => 'Category/edit.hide', 'icon' => 'fa-pencil-square'],
+                        ['name' => '回收站', 'uri' => 'Category/recycle', 'icon' => 'fa-recycle'],
+                    ]
+                ],
                 [
                     'name' => '文章管理', 'group' => 'Article', 'icon' => 'fa-book', 'lists' => 'Article',
                     'items' => [

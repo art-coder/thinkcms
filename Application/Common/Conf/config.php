@@ -1,7 +1,6 @@
 <?php
 return array(
     //'配置项'=>'配置值'
-    'WEB_NAME' => 'ThinkCMS',
     'CMS_VERSION' => 0.1,// 版本信息
     'URL_MODEL' => '2', //URL模式
     'SHOW_PAGE_TRACE' => true,
@@ -23,8 +22,8 @@ return array(
 
     'APP_SUB_DOMAIN_DEPLOY' => 1, // 开启子域名配置
     'APP_SUB_DOMAIN_RULES' => array(
-        'admin.tpace.com' => 'Admin', // admin.tpace.com域名指向Admin模块
-        'www.tpace.com' => 'Home', // www.tpace.com域名指向Home模块
+        'admin' => 'Admin', // admin子域名指向Admin模块
+        'www' => 'Home', // www子域名指向Home模块
     ),
 
     'TAGLIB_PRE_LOAD' => 'Common\TagLib\Tags',   // 需要额外加载的标签库(须指定标签库名称)，多个以逗号分隔
@@ -40,6 +39,7 @@ return array(
         '__CSS__'    => __ROOT__ . '/Public/DEFAULT_THEME/css',
         '__JS__'     => __ROOT__ . '/Public/DEFAULT_THEME/js',
         '__THEME__'     => __ROOT__ . '/Public/DEFAULT_THEME',
+        '__PLUGINS__'     => __ROOT__ . '/Public/Plugins',
     ),
 
 

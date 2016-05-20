@@ -1,1 +1,6 @@
 /.idea
+/Application/Runtime
+/Public/Uploads
+.phpstorm.meta.php
+.tags
+.tags_sorted_by_file

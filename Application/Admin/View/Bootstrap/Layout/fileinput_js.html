@@ -1,0 +1,23 @@
+<script src="__PLUGINS__/fileinput/js/plugins/canvas-to-blob.min.js" type="text/javascript"></script>
+<script src="__PLUGINS__/fileinput/js/fileinput.min.js"></script>
+<script src="__PLUGINS__/fileinput/js/fileinput_locale_zh.js"></script>
+<script>
+    $("#upload_thumbnail").fileinput({
+        <if condition="$data['thumbnail']">
+        initialPreview: [
+            '<img src="{$data['thumbnail']}" class="file-preview-image">'
+        ],
+        </if>
+        overwriteInitial: true,
+        language: 'zh', //设置语言
+//        uploadUrl: '{:U("Addons/upload")}', //上传的地址
+        allowedFileExtensions: ['jpg', 'png', 'gif', 'jpeg'],//接收的文件后缀
+        showRemove: true,
+        showUpload: false, //是否显示上传按钮
+        showCaption: false, //是否显示标题
+        browseClass: "btn btn-primary",
+        fileType: "any"
+    }).on('filecleared', function(event) {
+        $('#cancel_upload_thumbnail').val(1);
+    });
+</script>

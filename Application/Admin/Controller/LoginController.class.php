@@ -8,37 +8,41 @@ namespace Admin\Controller;
 
 use Common\Controller\BaseController;
 
-
 class LoginController extends BaseController
 {
 
-    public function index()
-    {
+    public function index() {
         if (IS_POST) {
-            $error = D('Manage')->login(I('post.username'), I('post.password'));
-            if ($error) {
-                $this->error = $error;
+            $Manage = D('Manage');
+            if (!$Manage->create($_POST, 4)) {
+				foreach ($Manage->getError() as $error) {
+                    save_admin_flash_msg($error, 'danger');
+                }
             } else {
-                $this->redirect('Index/index');
+                $errors = $Manage->login(I('post.username'), I('post.password'));
+                if ($errors) {
+                    foreach ($errors as $error) {
+                        save_admin_flash_msg($error, 'danger');
+                    }
+                } else {
+                    $this->redirect('Index/index');
+                }
             }
         }
         $this->display();
     }
 
-    public function logout()
-    {
+    public function logout() {
         D('Manage')->logout();
         $this->redirect('Login/index');
     }
 
-    public function findpass(){
+    public function findpass() {
         $this->display();
     }
 
-
-    public function test(){
+    public function test() {
         show_bug(get_defined_constants(true));
     }
 
 }
-

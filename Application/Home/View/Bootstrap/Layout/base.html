@@ -1,0 +1,15 @@
+<include file="Layout/header"/>
+<include file="Layout/browse"/>
+<include file="Layout/nav"/>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="{:U('Index/index')}"><i class="fa fa-home"></i>&nbsp;首页</a></li>
+                <block name="breadcrumb"></block>
+            </ol>
+            <block name="content"></block>
+        </div>
+    </div>
+</div>
+<include file="Layout/footer"/>
