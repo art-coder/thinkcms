@@ -1,6 +1,61 @@
 <extend name="Layout/base"/>
-<block name="current">后台项目管理</block>
-
+<block name="current">后台用户</block>
+<block name="breadcrumb">
+    <li><a href="{:U('Manage/index')}"><i class="fa fa-user-md"></i>&nbsp;后台用户</a></li>
+    <li class="active"><if condition="$action eq 'add'">添加管理员<else/>修改管理员</if></li>
+</block>
 <block name="content">
-
+    <form id="addform" action="{:U('save')}" class="form-horizontal" method="post">
+        <input type="hidden" name="id"  value="{$info.id}"/>
+        <input type="hidden" name="action"  value="{$action}"/>
+        <div class="form-group">
+            <label for="username" class="col-sm-2 control-label">用户名：</label>
+            <div class="col-sm-3">
+                <input type="text" value="{$info.username}" name="username" id="username"
+                       placeholder="用户名" <if condition="$action eq 'edit'">disabled</if>
+                       class="form-control small" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email" class="col-sm-2 control-label">Email：</label>
+            <div class="col-sm-3">
+                <input type="text" value="{$info.email}" name="email" id="email"
+                       placeholder="Email"
+                       class="form-control small" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email" class="col-sm-2 control-label">真实姓名：</label>
+            <div class="col-sm-3">
+                <input type="text" value="{$info.truename}" name="truename" id="truename"
+                       placeholder="真实姓名"
+                       class="form-control small" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email" class="col-sm-2 control-label">密码：</label>
+            <div class="col-sm-3">
+                <input type="password" value="" name="password" id="password"
+                       placeholder="密码"
+                       class="form-control small">
+                <if condition="$action eq 'edit'"><span class="help-block">留空为不修改密码</span></if>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">账号状态：</label>
+            <div class="col-sm-3">
+                <label class="radio-inline">
+                    <input type="radio" name="status" value="1" {$info['status'] ? 'checked' : ''}> 启用
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="status" value="0" {$info['status'] ? '' : 'checked'}> 禁用
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">保存</button>
+            </div>
+        </div>
+    </form>
 </block>

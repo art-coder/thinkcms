@@ -1,0 +1,18 @@
+<ul class="nav navbar-nav">
+    <foreach name="category" item="item">
+        <li class="{$current == $item['id'] ? 'active' : ''}">
+            <if condition="$item['child']">
+                <a href="{:U('Html/category', ['id' => $item['id']])}" class="dropdown-toggle" data-toggle="dropdown"
+                   role="button"
+                   aria-expanded="false">{$item['title']} <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <foreach name="item.child" item="v">
+                        <li><a href="{:U('Html/category', ['id' => $v['id']])}">{$v['title']}</a></li>
+                    </foreach>
+                </ul>
+                <else/>
+                <a href="{:U('Html/category', ['id' => $item['id']])}">{$item['title']}</a>
+            </if>
+        </li>
+    </foreach>
+</ul>

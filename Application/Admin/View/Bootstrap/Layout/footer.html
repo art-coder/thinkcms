@@ -5,8 +5,25 @@
         <p>© Company {:date('Y')}</p>
     </div>
 </footer>
+<div class="modal fade bs-example-modal-sm" id="msg_alert_box" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">操作提示</h4>
+            </div>
+            <div class="modal-body">
+                <p id="alert_msg">One fine body…</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="__JS__/jquery.min.js"></script>
 <script src="__JS__/bootstrap.min.js"></script>
+<script src="__JS__/admin.js"></script>
 <block name="script"></block>
 </body>
 </html>

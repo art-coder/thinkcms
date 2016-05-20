@@ -12,11 +12,11 @@ use Think\Controller;
 class BaseController extends Controller
 {
 
-    public $error = [];
+//    public $error = [];
 
     public function __construct(){
         parent::__construct();
-        get_instance($this);
+//        get_instance($this);
         // 设置模板
         set_theme();// 必须调用一次，以便解析定义的css等变量
     }

@@ -1,0 +1,84 @@
+<extend name="Layout/base"/>
+<block name="current">栏目管理</block>
+<block name="breadcrumb">
+    <li><a href="{:U('Category/index')}"><i class="fa fa-columns"></i>&nbsp;栏目管理</a></li>
+    <li class="active"><if condition="($action eq 'edit') AND ($category_id gt 0)">编辑栏目<else/>添加栏目</if></li>
+</block>
+<block name="content">
+    <form id="addform" action="{:U('save')}" class="form-horizontal" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id"  value="{$category_info.id}"/>
+
+        <div class="form-group">
+            <label for="title" class="col-sm-2 control-label">栏目名称：</label>
+
+            <div class="col-sm-3">
+                <input type="text" value="{$category_info.title}" name="title" id="title"
+                       placeholder="栏目名称"
+                       class="form-control small" required>
+            </div>
+        </div>
+
+        <div class="form-group ">
+            <label class="col-sm-2 control-label">所属栏目：</label>
+
+            <div class="col-sm-3">
+                <select name="pid" class="form-control">
+                    <option value="0" <if condition="!($category_info['pid'] OR $pid)">selected</if>>顶级栏目</option>
+                    <foreach name='category_list' item='v'>
+                        <option value="{$v.id}" <if condition="$category_info['pid'] eq $v['id'] OR $v['id'] eq $pid">selected</if>>{$v.delimiter}{$v.title}</option>
+                    </foreach>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="content" class="col-sm-2 control-label">栏目描述：</label>
+
+            <div class="col-sm-8">
+                <textarea class="form-control" rows="5" name="content" id="content">{$category_info.content}</textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="sort" class="col-sm-2 control-label">排序(越小越靠前)：</label>
+
+            <div class="col-sm-1">
+                <input type="text" value="{$category_info.sort|default=1}" name="sort" id="sort"
+                       placeholder="排序号只能为1-2位数字"
+                       class="form-control small" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">是否显示(前台)：</label>
+
+            <div class="col-sm-3">
+                <label class="radio-inline">
+                    <input type="radio" name="is_show" value="1" {$category_info['is_show'] ? 'checked' : ''}> 显示
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="is_show" value="0" {$category_info['is_show'] ? '' : 'checked'}> 隐藏
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">栏目状态：</label>
+
+            <div class="col-sm-3">
+                <label class="radio-inline">
+                    <input type="radio" name="status" value="1" {$category_info['status'] ? 'checked' : ''}> 启用
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="status" value="0" {$category_info['status'] ? '' : 'checked'}> 禁用
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">保存</button>
+            </div>
+        </div>
+    </form>
+</block>

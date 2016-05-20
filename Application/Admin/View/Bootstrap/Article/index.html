@@ -1,7 +1,7 @@
 <extend name="Layout/base"/>
-<block name="current">文章管理 -- 后台项目管理</block>
+<block name="current">文章管理</block>
 <block name="breadcrumb">
-    <li><a href=":U('Article/index')"><i class="fa fa-book"></i>&nbsp;文章管理</a></li>
+    <li><a href="{:U('Article/index')}"><i class="fa fa-book"></i>&nbsp;文章管理</a></li>
     <li class="active">文章列表</li>
 </block>
 <block name="content">
@@ -20,14 +20,15 @@
                 <td>{$vo.id}</td>
                 <td>{$vo.title}</td>
                 <td>{:date('Y-m-d H:i:s', $vo['created'])}</td>
-                <td>编辑 | 删除 | 查看</td>
+                <td>
+                    <a href="{:U('Article/edit', ['id' => $vo['id']])}">编辑</a>
+                    | <a href="{:U('Article/operate', ['mode' => 'recycle', 'id' => $vo['id']])}">删除</a>
+                    | <a target="_blank" href="{:U('Home/Html/article', ['id' => $vo['id']], true, true)}">查看</a></td>
             </tr>
         </foreach>
         <tr>
             <td colspan="4" align="center">
-                <div class="pager">
-                    {$page}
-                </div>
+                {$page}
             </td>
         </tr>
         </tbody>

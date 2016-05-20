@@ -10,9 +10,40 @@ use Think\Model;
 class ManageModel extends Model
 {
 
+    protected $patchValidate = true;
+
+    protected $_validate = array(
+        // all
+        array('username', 'require', '账号必填！'),
+        array('email', 'require', '邮箱必填！'),
+        array('email', 'email', '邮箱必须是正确的邮箱地址！'),
+        array('truename', 'require', '真实姓名必填！'),
+        // add
+        array('password', 'require', '密码必填！', self::MUST_VALIDATE, 'regex', self::MODEL_INSERT),
+        array(
+            'username',
+            'usernameUnique',
+            '你填写的用户名已经存在，请重新填写一个！',
+            self::MUST_VALIDATE,
+            'callback',
+            self::MODEL_INSERT
+        ),
+        // edit
+    );
+
+    protected $_auto = [
+        // all
+        ['password', 'updatePassword', self::MODEL_BOTH, 'callback'],
+        // add
+        ['created', 'time', self::MODEL_INSERT, 'function'],
+        ['updated', 'created', self::MODEL_INSERT, 'field'],
+        // update
+        ['updated', 'time', self::MODEL_UPDATE, 'function'],
+        ['password', '', self::MODEL_UPDATE, 'ignore'],
+    ];
+
     // 用户登录
-    public function login($username, $password)
-    {
+    public function login($username, $password) {
         $return = [];
         $result = $this->where(['username' => $username, 'password' => $this->passEncrypt($password)])->find();
         if ($result) {
@@ -29,19 +60,19 @@ class ManageModel extends Model
         } else {
             $return['username'] = '用户名或密码错误！';
         }
+
         return $return;
     }
 
-    public function checkAdminLogin()
-    {
-        if (session('userinfo'))
+    public function checkAdminLogin() {
+        if (session('userinfo')) {
             return true;
-        else
+        } else {
             return false;
+        }
     }
 
-    public function setSession($userinfo)
-    {
+    public function setSession($userinfo) {
         unset($userinfo['status']);
         unset($userinfo['password']);
         unset($userinfo['updated']);
@@ -49,14 +80,24 @@ class ManageModel extends Model
         session('userinfo', $userinfo);
     }
 
-    public function passEncrypt($pass)
-    {
+    public function passEncrypt($pass) {
         return md5($pass);
     }
 
-    public function logout()
-    {
+    public function updatePassword($pass) {
+        if ($pass) {
+            return $this->passEncrypt($pass);
+        } else {
+            return '';
+        }
+    }
+
+    public function logout() {
         session('userinfo', null);
+    }
+
+    public function usernameUnique($username) {
+        return !$this->where("username='{$username}'")->select();
     }
 
 }

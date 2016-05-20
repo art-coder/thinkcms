@@ -11,6 +11,17 @@
                 <li><a href="{:U('Index/index')}"><i class="fa fa-home"></i>&nbsp;首页</a></li>
                 <block name="breadcrumb"></block>
             </ol>
+
+            <if condition="$flash_msg = get_admin_flash_msg()">
+                <foreach name="flash_msg" item="msgs">
+                    <div class="alert alert-dismissible alert-{$key}">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <foreach name="msgs" item="msg">
+                            <p>{$msg}</p>
+                        </foreach>
+                    </div>
+                </foreach>
+            </if>
             <block name="content"></block>
         </div>
     </div>

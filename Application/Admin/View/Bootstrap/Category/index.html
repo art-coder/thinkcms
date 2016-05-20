@@ -1,0 +1,62 @@
+<extend name="Layout/base"/>
+<block name="current">栏目管理</block>
+<block name="breadcrumb">
+    <li><a href="{:U('Category/index')}"><i class="fa fa-columns"></i>&nbsp;栏目管理</a></li>
+    <li class="active">栏目列表</li>
+</block>
+<block name="content">
+    <table class="table table-bordered table-striped center">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>栏目名称</th>
+            <th>是否显示</th>
+            <th>状态</th>
+            <th>排序</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <foreach name="category_list" item="v">
+            <tr>
+                <td>{$v.id}</td>
+                <td>
+                    <div class="left">{$v.delimiter}{$v['pid'] ? '->> ' : ''}{$v.title}</div>
+                </td>
+                <td>
+                    <if condition="$v['is_show']">
+                        <button class="btn btn-sm btn-success js_update_show" title="点击隐藏" data-id="{$v.id}">显示
+                        </button>
+                        <else/>
+                        <button class="btn btn-sm btn-default js_update_show" title="点击显示" data-id="{$v.id}">隐藏
+                        </button>
+                    </if>
+                </td>
+                <td>
+                    <if condition="$v['status']">
+                    <button class="btn btn-sm btn-success js_update_status" title="点击禁用" data-id="{$v.id}">已启用
+                    </button>
+                    <else/>
+                    <button class="btn btn-sm btn-default js_update_status" title="点击启用" data-id="{$v.id}">已禁用
+                    </button>
+                    </if>
+                </td>
+                <td>{$v.sort}</td>
+                <td align="center">
+                    <a class="btn btn-sm btn-default" href="{:U('add', ['pid' => $v['id']])}">添加子栏目 </a>
+                    <a class="btn btn-sm btn-warning" href="{:U('edit', ['id' => $v['id']])}">修改 </a>
+                    <a class="btn btn-sm btn-success" href="{:U('Home/Html/category', ['id' => $v['id']], true, true)}"
+                       target="_blank">预览 </a>
+                </td>
+            </tr>
+        </foreach>
+        </tbody>
+    </table>
+</block>
+
+<block name="script">
+    <script>
+        change_status('js_update_status', '{:U("operate")}', 'status');
+        change_status('js_update_show', '{:U("operate")}', 'show');
+    </script>
+</block>

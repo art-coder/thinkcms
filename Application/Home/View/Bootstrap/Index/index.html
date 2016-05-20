@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Testing</title>
-</head>
-<body>
-<h1>page content start</h1>
-==>{$title}<br />
-{$error.username}<br />
-{:show_bug($Think)}
-</body>
-</html>
+<extend name="Layout/index"/>
+<block name="current">首页</block>
+<block name="content">
+    <ul>
+        <foreach name="list" item="item">
+            <li><a href="{:U('Html/article', ['id' => $item['id']])}">{$item['title']}</a></li>
+        </foreach>
+    </ul>
+    {$page}
+</block>

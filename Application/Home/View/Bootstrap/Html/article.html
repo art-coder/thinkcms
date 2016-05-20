@@ -5,8 +5,28 @@
 </block>
 
 <block name="content">
-    <div id="article-render"></div>
-    <textarea id="article-source" style="display: none;">{$article.content}</textarea>
+    <div class="article-content">
+        <if condition="$article['abstract']">
+            <blockquote>{:htmlspecialchars_decode($article['abstract'])}</blockquote>
+        </if>
+        <if condition="$article['thumbnail']">
+            <div class="featured-media">
+                <img max-witdh="500" class="thumbnail" src="{$article['thumbnail']}" alt=""/>
+            </div>
+        </if>
+        <div id="article-render"></div>
+        <textarea id="article-source" style="display: none;">{$article.content}</textarea>
+    </div>
+    <ul class="pager">
+        <li class="previous {$older['id'] ? '' : 'disabled'}">
+            <a href="<if condition="$older['id']">{:U('Html/article', ['id' => $older['id']])}<else/>javascript:;</if>"
+               title="{$older['title'] ? $older['title'] : '没有了'}">&larr; 上一篇</a>
+        </li>
+        <li class="next {$newer['id'] ? '' : 'disabled'}">
+            <a href="<if condition="$newer['id']">{:U('Html/article', ['id' => $newer['id']])}<else/>javascript:;</if>"
+            title="{$newer['title'] ? $newer['title'] : '没有了'}">下一篇 &rarr;</a>
+        </li>
+    </ul>
 </block>
 
 <block name="script">

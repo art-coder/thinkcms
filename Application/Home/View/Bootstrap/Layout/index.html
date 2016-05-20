@@ -1,0 +1,13 @@
+<include file="Layout/header"/>
+<include file="Layout/nav"/>
+<include file="Layout/browse"/>
+<div class="container">
+    <div class="row">
+        <div class="jumbotron">
+            <h1><i class="fa fa-leaf"></i>&nbsp;{$web_config['WEB_SITE_TITLE']}</h1>
+            <p>{$web_config['WEB_SITE_JUMBOTRON']}</p>
+        </div>
+        <block name="content"></block>
+    </div>
+</div>
+<include file="Layout/footer"/>

@@ -1,2 +1,99 @@
 <extend name="Layout/base"/>
 <block name="current">后台项目管理</block>
+
+<block name="breadcrumb">
+    <li class="active">网站配置</li>
+</block>
+
+<block name="content">
+    <form class="form-horizontal" action="" method="post">
+        <fieldset>
+            <legend>Seo</legend>
+            <div class="form-group">
+                <label for="web_site_title" class="col-md-2 control-label">网站标题</label>
+                <div class="col-md-10">
+                    <input type="text" name="web_site_title" class="form-control" id="web_site_title"
+                           placeholder="网站标题" value="{$config['WEB_SITE_TITLE'] ? $config['WEB_SITE_TITLE'] : ''}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="web_site_keywords" class="col-md-2 control-label">网站关键字</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" name="web_site_keywords" id="web_site_keywords"
+                           placeholder="网站关键字" value="{$config['WEB_SITE_KEYWORDS'] ? $config['WEB_SITE_KEYWORDS'] : ''}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="web_site_description" class="col-md-2 control-label">网站描述</label>
+                <div class="col-md-10">
+                    <textarea class="form-control" name="web_site_description" rows="3" id="web_site_description">{$config['WEB_SITE_DESCRIPTION'] ? $config['WEB_SITE_DESCRIPTION'] : ''}</textarea>
+                </div>
+            </div>
+            <legend>Setting</legend>
+            <div class="form-group">
+                <label class="col-md-2 control-label">站点情况</label>
+                <div class="col-md-10">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="web_site_close" value="1" {$config['WEB_SITE_CLOSE'] ? 'checked' : ''}>
+                            开启
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="web_site_close" value="0" {$config['WEB_SITE_CLOSE'] ? '' : 'checked'}>
+                            关闭
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">网站用户注册</label>
+                <div class="col-md-10">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="user_allow_register" value="1" {$config['USER_ALLOW_REGISTER'] ? 'checked' : ''}>
+                            开启
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="user_allow_register" value="0" {$config['USER_ALLOW_REGISTER'] ? '' : 'checked'}>
+                            关闭
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="web_site_close_msg" class="col-md-2 control-label">网站关闭提示内容</label>
+                <div class="col-md-10">
+                    <textarea class="form-control" name="web_site_close_msg" rows="3" id="web_site_close_msg">{$config['WEB_SITE_CLOSE_MSG'] ? $config['WEB_SITE_CLOSE_MSG'] : ''}</textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="user_close_msg" class="col-md-2 control-label">注册关闭提示内容</label>
+                <div class="col-md-10">
+                    <textarea class="form-control" name="user_close_msg" rows="3" id="user_close_msg">{$config['USER_CLOSE_MSG'] ? $config['USER_CLOSE_MSG'] : ''}</textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="web_site_jumbotron" class="col-md-2 control-label">站点巨幕内容</label>
+                <div class="col-md-10">
+                    <textarea class="form-control" name="web_site_jumbotron" rows="3" id="web_site_jumbotron">{$config['WEB_SITE_JUMBOTRON'] ? $config['WEB_SITE_JUMBOTRON'] : ''}</textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="web_site_about" class="col-md-2 control-label">关于我们</label>
+                <div class="col-md-10">
+                    <textarea class="form-control" name="web_site_about" rows="5" id="web_site_about">{$config['WEB_SITE_ABOUT'] ? $config['WEB_SITE_ABOUT'] : ''}</textarea>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"></label>
+                <div class="controls">
+                    <button type="submit" class="btn btn-default">提交</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</block>
