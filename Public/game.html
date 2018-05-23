@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html style="background-color:#313131;">
+    <head>
+        <title id="title">for me</title>
+        <meta charset="utf-8"/>
+        <base href="https://www.kxtui.com"/>
+    </head>
+    <body style="background-color:#313131;">
+        <div id="guidefx" style="overflow: hidden;display:none; position: absolute; left: 0px; top: 0px; z-index: 99997; ">
+            for me奔跑吧兔子简介
+        </div>
+        <div id="jgloading" style=" position:absolute;z-index:99999;width:100%; padding-top:300px; color:#ffffff;text-align:center;height:100%;font-size:28px;background:#313131;">
+            <div style="background-image:url(/css/loadinglogo.png?3);width:150px;height:117px;">
+                <div class="running" style="background:url(/css/loadingr.png?1) no-repeat 0 0;">
+                </div>
+            </div>
+            <hr />
+            玩游戏，拿奖品...
+            <div id="jgloading1" style="color:#fff;font-size:22px;text-align:center;">
+            </div>
+            <div style="margin-top:240px;color:#fff;font-size:22px;text-align:center;">
+                开心推
+            </div>
+        </div>
+        <div id="maindiv">
+        </div>
+        <div id="statehtml">
+        </div>
+    </body>
+    <script>
+        var slurl = (window.location + '');
+
+       
+        if (slurl.indexOf('.html') > -1 && slurl.indexOf(";amp;") > 0) {
+            slurl = slurl.replace(/;amp;/gi, '&');
+            window.location.replace(slurl);
+        }
+        if (slurl.indexOf('.html') > -1 && slurl.indexOf('.html?') == -1) {
+            window.location.replace(slurl + '?');
+        }
+        var oss_Url = "http://oss.kxtui.cn/";
+        var image_oss="http://image.kxtui.com/";
+        //ifWxoath是否启用微信授权认证
+        //cwxas公众号配置信息,op,qzyz,idadd,ifcgz,lx
+        var jg_aj = {
+            galx: 9,
+            idusc: 90480045,
+            ifWxoath: 0,
+            ifMobile: 0,
+            cwxas: '',
+            idpg: 22751,
+            idcm: 1440533,
+            sj: {
+                t: 1526895532591,
+                upd: [],
+                'pg': {
+                    a: {
+                        maxr: 1,
+                        modifyd: 1526895447760,
+                        x: 1
+                    },
+                    all: {
+                        22751: {
+                            csx: "10562999957",
+                            ctn: "奔跑吧兔子",
+                            cti: "bpbtz",
+                            coth: "",
+                            id: 22751,
+                            cgurl: "",
+                            ctke: "",
+                            cio: "",
+                            ctag: "运动，通用，跑酷，餐饮，反应",
+                            galx: 9,
+                            cjimg: "",
+                            cburl: "",
+                            cmc: "",
+                            idtj: 0,
+                            csst: "",
+                            price: 100,
+                            wh: 0,
+                            cjj: "奔跑吧兔子简介",
+                            n5: 0,
+                            s3: 137483,
+                            s2: 0,
+                            s1: 18,
+                            idpg: 12,
+                            cjs: "'/js/zepto.min.js'|'/audio_coffee.js'|'/cjex.js?1'|'/g/bpbtz/css/index.css'|'/g/bpbtz/js/viewporter.js'|'/g/bpbtz/js/TweenMax.min.js'|'/g/bpbtz/js/howler.js'|'/g/bpbtz/js/VisibilityManager.js'|'/g/bpbtz/js/index.js?2017060703'|'/g/bpbtz/js/app.js?2017060802'",
+                            n6: 0,
+                            code: "'奔跑吧兔子'|'【选项】_请在下方进行版本选择_原版'|'【无效】核销密匙'|'【无效】获奖者请于2015年12月24日PM12:00前前往武汉天禄华美达广场酒店内兑奖并领取奖品（所获奖品可一次性兑换），咨询电话027-83630888。'|'【开关】_是否开启支付'|'支付金额（元）仅开启支付有效'|'【开关】_是否不显示排行榜按钮'|'【开关】_是否不显示更多游戏按钮'",
+                            cini: "",
+                            typ: 0,
+                            cdb: "<div id='maindiv'></div>",
+                            n7: 0,
+                            n3: 0,
+                            zg: 0,
+                            n0: 0,
+                            n2: 0,
+                            lxgd: 0,
+                            updd: 0,
+                            rcogd: 0,
+                            created: 1435979084285,
+                            pgt: 0,
+                            hct: 0,
+                            wct: 0,
+                            ncty: 0,
+                            nctx: 502,
+                            pgx: 0,
+                            pgy: 0,
+                            ifn: 0,
+                            rco: 0,
+                            wklx: 0,
+                            idus: 10002,
+                            s0: 512,
+                            s4: 0,
+                            s5: 12,
+                            s6: 876,
+                            s7: 0,
+                            s8: 0,
+                            s9: 0,
+                            n1: 0,
+                            n4: 127090,
+                            dj: 0
+                        },
+                        sx: [22751]
+                    }
+                },
+                'cm': {
+                    a: {
+                        maxr: 1,
+                        modifyd: 1526895532538,
+                        x: 1
+                    },
+                    all: {
+                        1440533: {
+                            ifsh: 0,
+                            s3: 4,
+                            id: 1440533,
+                            cdcm: "",
+                            rco: 0,
+                            cgz: "",
+                            cjj: "",
+                            zc: 0,
+                            typ: 9,
+                            created: 1526895447679,
+                            fd: 3,
+                            ifj: 0,
+                            ctn: "for me",
+                            cljurl: "",
+                            cwxgz: "",
+                            csd: "2018-05-31T10:00:00",
+                            idpg: 22751,
+                            czj: "",
+                            ifgz: 0,
+                            n5: 0,
+                            ctnus: "",
+                            ced: "2018-06-30T17:37:27",
+                            cxzurl: "",
+                            cxz: "",
+                            chsd: "2018-05-21T17:37:27",
+                            ched: "2018-05-31T17:37:27",
+                            idus: 90480045,
+                            csx: "",
+                            cip: "",
+                            mor: 0,
+                            galx: 9,
+                            ift: 0,
+                            cobg: "",
+                            colfont: "",
+                            n9: 0,
+                            n8: 1,
+                            ifjp: 0,
+                            cmc: "",
+                            cio: "",
+                            pidus: 0,
+                            ifr: 0,
+                            ncheck: 0,
+                            ifxt: 0,
+                            secu: 0,
+                            sd: 0,
+                            usid: 0,
+                            ed: 0,
+                            lxtc: 0,
+                            idtj: 0,
+                            idgr: 0,
+                            n7: 0,
+                            n6: 0,
+                            conelj: "",
+                            ifzj: 0,
+                            cups: "",
+                            cwxas: "",
+                            czc: "",
+                            cmrurl: "",
+                            cmrtxt: "",
+                            cdz: "",
+                            cmsurl: "",
+                            ifvtel: 0,
+                            ifspic: 0
+                        },
+                        sx: [1440533]
+                    }
+                },
+                'vs@cm': {
+                    a: {
+                        maxr: 1,
+                        modifyd: 1526895447765,
+                        x: 1
+                    },
+                    all: {
+                        90480045: {
+                            created: 1526894823668,
+                            cwxgz: "",
+                            s8: 1,
+                            ctel: "",
+                            idtj: 0,
+                            cpy: "",
+                            cnt: "evan",
+                            n4: 0,
+                            ol: 0,
+                            lv: 0,
+                            n0: 0,
+                            idus: 90480045,
+                            s3: 0,
+                            idgd: 0,
+                            rmb: 0,
+                            logind: 1526894823586,
+                            vip: 0,
+                            pgid: 0,
+                            role: 0,
+                            pgsid: 0,
+                            s0: 0,
+                            n2: 0,
+                            n3: 20,
+                            bb: 0,
+                            zg: 0,
+                            cgz: "",
+                            cxxdz: "",
+                            cwx: "",
+                            lx: 0,
+                            hs: 0,
+                            xx: 0,
+                            yy: 0,
+                            n1: 4,
+                            dj: 0,
+                            logint: 1,
+                            cdz: "",
+                            idpg: -98,
+                            cwb: "",
+                            sex: 0,
+                            cyb: "",
+                            shouqud: 0,
+                            wz: 0,
+                            team: 0,
+                            zidus: 0,
+                            cbid: "",
+                            cnavig: "",
+                            s7: 0,
+                            mst: 0,
+                            zt: 0,
+                            gj: 0,
+                            fy: 0,
+                            sc: 0,
+                            modifyd: 1526895447765,
+                            id: 90439888,
+                            s4: 0,
+                            s6: 0,
+                            s1: 0,
+                            s5: 0,
+                            fpd: 0,
+                            ps: 0,
+                            idgr: 0,
+                            s9: 0,
+                            s2: 0,
+                            galx: 9
+                        },
+                        sx: [90480045]
+                    }
+                },
+                'fi': {
+                    a: {
+                        maxr: 0,
+                        modifyd: 0,
+                        x: 1
+                    },
+                    all: {}
+                },
+                'cm@1': {
+                    a: {
+                        maxr: 0,
+                        modifyd: 0,
+                        x: 1
+                    },
+                    all: {}
+                },
+                'dhm': {
+                    a: {
+                        maxr: 0,
+                        modifyd: 0,
+                        x: 1
+                    },
+                    all: {}
+                },
+                'wxs': {
+                    a: {
+                        maxr: 1,
+                        modifyd: 1474536780724,
+                        x: 1
+                    },
+                    all: {
+                        1: {
+                            cappid: "wx8612690fa5e2924d"
+                        },
+                        sx: [1]
+                    }
+                },
+                'fl': {
+                    a: {
+                        maxr: 2,
+                        modifyd: 1526895514491,
+                        x: 1
+                    },
+                    all: {
+                        34513538: {
+                            idus: 90480045,
+                            numb: 0,
+                            usid: 0,
+                            modifyd: 1526895514491,
+                            jpzt: 0,
+                            cwxn: "",
+                            cfrom: "",
+                            sex: 0,
+                            cpk: "",
+                            id: 34513538,
+                            n3: 0,
+                            mfs: 1644,
+                            fs: 1644,
+                            idfl: 0,
+                            ctn: "ra",
+                            created: 1526895489338,
+                            iddhm: 0,
+                            upd: 0,
+                            idcm: 1440533,
+                            n0: 0,
+                            chedimg: "",
+                            s0: 0,
+                            copid: "",
+                            csy: "",
+                            dj: 0,
+                            idpg: 0
+                        },
+                        34513537: {
+                            idus: 90480045,
+                            numb: 0,
+                            usid: 0,
+                            modifyd: 1526895514481,
+                            jpzt: 0,
+                            cwxn: "",
+                            cfrom: "",
+                            sex: 0,
+                            cpk: "",
+                            id: 34513537,
+                            n3: 0,
+                            mfs: 1644,
+                            fs: 1644,
+                            idfl: 0,
+                            ctn: "rd",
+                            created: 1526895489326,
+                            iddhm: 0,
+                            upd: 0,
+                            idcm: 1440533,
+                            n0: 0,
+                            chedimg: "",
+                            s0: 0,
+                            copid: "",
+                            csy: "",
+                            dj: 0,
+                            idpg: 0
+                        },
+                        sx: [34513538, 34513537]
+                    }
+                },
+                'us': {
+                    a: {
+                        maxr: 1,
+                        modifyd: 1526895399509,
+                        x: 1
+                    },
+                    all: {
+                        90480045: {
+                            wbid: 0,
+                            qq: 1161881312,
+                            cpy: "",
+                            idpg: 0,
+                            role: 0,
+                            vip: 0,
+                            ctn: "",
+                            cem: "1161881312@qq.com",
+                            aid: "",
+                            cbd: "",
+                            idus: 0,
+                            id: 90480045,
+                            modifyd: 1526895399509,
+                            mb: 0,
+                            cnn: "",
+                            cun: "",
+                            coid: "",
+                            iftx: 0,
+                            jfd: 0,
+                            czfb: "",
+                            tidus: 0,
+                            cid: "",
+                            s0: 0,
+                            s1: 0,
+                            s2: 0,
+                            s3: 2,
+                            s4: 0,
+                            s5: 0,
+                            s6: 0,
+                            s7: 0,
+                            s8: 0,
+                            s9: 0,
+                            wx: 0,
+                            zg: 0,
+                            team: 0,
+                            cip: ""
+                        },
+                        sx: [90480045]
+                    }
+                },
+                'vs': {
+                    a: {
+                        maxr: 1,
+                        modifyd: 1526895447765,
+                        x: 1
+                    },
+                    all: {
+                        90480045: {
+                            created: 1526894823668,
+                            cwxgz: "",
+                            s8: 1,
+                            ctel: "",
+                            idtj: 0,
+                            cpy: "",
+                            cnt: "evan",
+                            n4: 0,
+                            ol: 0,
+                            lv: 0,
+                            n0: 0,
+                            idus: 90480045,
+                            s3: 0,
+                            idgd: 0,
+                            rmb: 0,
+                            logind: 1526894823586,
+                            vip: 0,
+                            pgid: 0,
+                            role: 0,
+                            pgsid: 0,
+                            s0: 0,
+                            n2: 0,
+                            n3: 20,
+                            bb: 0,
+                            zg: 0,
+                            cgz: "",
+                            cxxdz: "",
+                            cwx: "",
+                            lx: 0,
+                            hs: 0,
+                            xx: 0,
+                            yy: 0,
+                            n1: 4,
+                            dj: 0,
+                            logint: 1,
+                            cdz: "",
+                            idpg: -98,
+                            cwb: "",
+                            sex: 0,
+                            cyb: "",
+                            shouqud: 0,
+                            wz: 0,
+                            team: 0,
+                            zidus: 0,
+                            cbid: "",
+                            cnavig: "",
+                            s7: 0,
+                            mst: 0,
+                            zt: 0,
+                            gj: 0,
+                            fy: 0,
+                            sc: 0,
+                            modifyd: 1526895447765,
+                            id: 90439888,
+                            s4: 0,
+                            s6: 0,
+                            s1: 0,
+                            s5: 0,
+                            fpd: 0,
+                            ps: 0,
+                            idgr: 0,
+                            s9: 0,
+                            s2: 0,
+                            galx: 9
+                        },
+                        sx: [90480045]
+                    }
+                },
+                'ad@1': {
+                    a: {
+                        maxr: 1,
+                        modifyd: 1478760421976,
+                        x: 1
+                    },
+                    all: {
+                        78: {
+                            issh: 0,
+                            id: 78,
+                            curl: "",
+                            lx: 1,
+                            n4: 0,
+                            n0: 0,
+                            idpg: 0,
+                            idcm: 322975,
+                            created: 1478760421976,
+                            idus: 75594752,
+                            ctn: "",
+                            cimg: "http://image.kxtui.com/pg/fi/14787/1478760410237.png",
+                            state: 0,
+                            modifyd: 1478760421976
+                        },
+                        sx: [78]
+                    }
+                },
+                'dhmc@1': {
+                    a: {
+                        maxr: 0,
+                        modifyd: 0,
+                        x: 1
+                    },
+                    all: {}
+                }
+            },
+            gp: 'bpbtz',
+            cod: {},
+            fid: -1,
+            gscore: 0,
+            gamesd: 1526895532468,
+            yqm: ''
+        };
+        var loadjsa = eval('[' + jg_aj.sj.pg.all[jg_aj.idpg].cjs.replace(/\|/g, ',') + ']');
+        jg_aj.cod = eval('[' + jg_aj.sj.pg.all[jg_aj.idpg].code.replace(/\|/g, ',') + ']');
+        var js_beforload = '';
+        var galx = 9;
+        var idusc =90480045;//游戏创建者
+        var idpg =22751;
+        var idcm =1440533;
+        var sj = jg_aj.sj;//废止
+        var jg_gp = 'bpbtz';
+        var jg_bili = '1';//兑奖比例
+        var scoAppid = 'wx8612690fa5e2924d';//指定的APPID
+        var urlfrom = ''; //来源
+        var ifspic = '0';
+        //var slog="st:|pg|cm|vs@cm|fi|cm@1|dhm|wxs|fl|us|vs|ad@1|dhmc@1sq:|all|all:id:idus:idus|(idus)all|all|all|all|cappid|all|all:id|(idus)all|all|all,sw:|id=22751|id=1440533|idus in ({1})|idcm=1440533 and csx!=''  and csx!='-2' |galx=9 and typ=9 and cdcm='1440533'  |idcm=1440533  order by  fs DESC,id DESC  limit 0,100 |(idcm=1440533 or (idcm=-1 and cdomin='www.kxtui.com')) and authtyp=0  order by idcm desc limit 0,1|idcm=1440533 and idus=90480045 and (ctn='rd' or ctn='ra') order by id desc|id=90480045|(idus in ({0},{1})) and galx=9|lx=1 order by id desc limit 0,1|idcm=1440533 and fidus=90480045 and iddhm=-1";
+        var ifwgamge=0;//是否为网络游戏
+        var n9=0;
+        var mjtidcm = 0;
+
+        var _paq = _paq || [];
+        if (jg_gp == 'wuziqi') {
+            //navig.ie=1;
+            window.oldJquery = 1;
+            window.oldJqueryPath = '/js/jquery-1.8.2.min.js';
+        }
+
+        function jg_share(n, m, shtxt, f,func, ifdays, json) {//m结果或者自定义title文本，n是分数，shtxt右上角文案
+           try{ 
+                 if(typeof(n)!="undefined"){
+                     jg_aj.gscore = n; 
+                 }else{
+                    jg_aj.gscore=1;
+                 } 
+                sco.inishuomf=1;
+                if ('' != '')
+                    jg_aj.gscore = eval('');
+                var bfb = Math.atan(jg_aj.gscore * 0.1) * 100 - 57;
+                bfb = Math.max(bfb, 0.11);
+                bfb = Math.min(bfb, 99.99);
+                var s = "";
+                if (typeof (m) == "string") {
+                    s = m;
+                } else {
+                    s = jg_gettxt(m || 0).replace('%n', jg_aj.gscore).replace('[分数]', jg_aj.gscore).replace('[百分比]', (bfb + '').substring(0, 5)).replace('[姓名]', j().gv('db.myfl.cwxn',j().gv('db.vs.all[db.idus].cnt', db.idus)));
+                }
+
+                document.title = s;
+                
+                resetWx_read(function(){
+                    if (f == 0)return; //0、只改title
+         
+                    if (f == 1) {//1、插入分，不显示分享层
+                        if(lurl.indexOf("csse")>-1)alert("addfl 1"); 
+                        sco.addFl(jg_aj.gscore,func, ifdays, json);
+                    } else if (f == 2) {// 2、只显示，不插分 
+                        if(lurl.indexOf("csse")>-1)alert("addfl 2"); 
+                        jg_share1(jg_aj.gscore, m, shtxt);
+                    } else {
+                        if(lurl.indexOf("csse")>-1)alert("addfl2 3,,"+typeof(jg_aj.gscore)+",bb,"+typeof(db.sj.vs)+",,"+window.shareData.addScore+",idus:"+db.idus+","+typeof(db.sj.vs.all[db.idus]));  
+                        sco.addFl(jg_aj.gscore, function () {
+                            if(lurl.indexOf("csse")>-1)alert("addfl 31"); 
+                            jg_share1(jg_aj.gscore, m, shtxt);
+                            db.dofunc(func);
+                        }, ifdays, json);//默认 既显示又插分 
+                    }
+                });
+           }catch(ex){
+              alert(ex);  
+           }
+
+
+
+
+        }
+
+
+        function jg_share1(n, m, shtxt) {
+            j().cls('zhbinfo');
+            if(jg_aj.sj.pg.all[jg_aj.idpg].wklx==7){    // h5网游类型，点击悬浮窗打开排行榜 --07.26 Tim
+                sco.scorebill();
+            }else{
+                sco.showsco(1,1, Math.max(jg_aj.gscore, 0), null, shtxt);
+                sco.checkshsh();
+            }
+         }
+         if(n9==1){
+             loadjsa = loadjsa.concat(['sco.js?2017022205']);//如果游戏关闭悬浮窗，则无需加载ui.core和Jcrop两个文件
+         }else{
+             loadjsa = loadjsa.concat(['sco.js?2017022205','/js/jquery.ui.core.min.js','/js/jquery.Jcrop.min.js']);
+         }
+   
+     
+        
+  
+var jsserv='';//jsçæä»¶è¯»å
+var aid='';
+var usfrom='';
+var lurl=(window.location+'').replace("#rd",'').replace(/;amp;/g,'&');
+var galx =galx||9;
+var idpg =idpg||-1;
+var loadjsa =loadjsa||[];
+var imgp=imgp||('css/');
+var jg_aj=jg_aj||{galx:9,sj:{}};
+var domain='www.kxtui.com';
+var oss_jsUrl="http://oss.kxtui.cn";//hugo 0806
+var htps="http";
+if(lurl.indexOf('https:')==0){
+    htps="https";
+}
+
+if(lurl.indexOf('http')==0){
+    domain= window.location.host;
+    if(imgp=='css/')imgp='/css/';
+
+}
+var windowjs=0;
+if(window.js)windowjs=1;
+var iftouch = 'ontouchend' in document;
+
+
+var brows = navigator.userAgent.toLowerCase();
+var navig_pre='webkit';
+var navig = {//jqueryåªæ¨èsupport
+    version: (brows.match(/.+(?:rv|it|ra|ie)[\/: ]([\d.]+)/) || [0, '0'])[1],
+    opera: (/opera/i.test(brows)?(navig_pre='o'):false),
+    firefox:(/firefox/i.test(brows)?(navig_pre='moz'):false),
+    ie: ((/msie/i.test(brows) && !/opera/.test(brows))?(navig_pre='ms'):false),
+    chrome: /chrome/i.test(brows) && /webkit/i.test(brows) && /mozilla/i.test(brows),
+    mozilla:((/mozilla/i.test(brows) && !/(compatible|webkit)/.test(brows) && !this.chrome)?(navig_pre='moz'):false),
+    safari: ((/webkit/i.test(brows) && !(/chrome/i.test(brows))&& !(/android/i.test(brows)))?(navig_pre='webkit'):false),
+    weixin:(brows.match(/MicroMessenger/i)=="micromessenger"?true:false)
+};
+try{
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+        WeixinJSBridge.call('hideToolbar');
+    });
+}catch(e){ };
+if( lurl.indexOf('usfrom=ios')>-1||navig.safari){
+    if(document.getElementById("jgviewport")){
+        var iscale=",initial-scale=0.66";
+
+        if(window.screen.height==667)iscale=0.778; //i6
+        if(window.screen.height==736)iscale=0.778; //i6p
+        //å¨iphoneåipadä¸ï¼æ è®ºä½ ç»viewportè®¾çå®½çæ¯å¤å°ï¼å¦ææ²¡ææå®é»è®¤çç¼©æ¾å¼ï¼åiphoneåipadä¼èªå¨è®¡ç®è¿ä¸ªç¼©æ¾å¼ï¼ä»¥è¾¾å°å½åé¡µé¢ä¸ä¼åºç°æ¨ªåæ»å¨æ¡(æèè¯´viewportçå®½åº¦å°±æ¯å±å¹çå®½åº¦)çç®çã
+        document.getElementById("jgviewport").content = "width=540, user-scalable=0";
+    }
+}else{
+    /* if(window.screen.height==640){//GALAXY S4
+     document.getElementById("jgviewport").content = "width=device-width, initial-scale=1,user-scalable=0";
+     }*/
+    //5.25 ä¸´æ¶ä½¿ç¨äºè´­é¡¹ç®åæµè¯
+    if((idpg==23077||idpg==23086) && lurl.indexOf("c1/i.jsp")>-1){
+        document.getElementById("jgviewport").content="width=540,initial-scale="+(window.screen.width/540)+",target-densitydpi=high-dpi, user-scalable=no";
+    }
+}
+
+function jg_loads(){
+    this.idx=0;
+    this.imgpa=[];
+    this.imgn=0;
+    this.gets=function(fa,fpath,ifnw){
+        var str='';
+        for(var i in fa){
+            str+=jg_loads.get(fa[i],fpath);
+            jg_loads.idx++;
+        }
+        if(ifnw){//é¢å è½½çæ¶é´
+
+        }else{
+            document.write(str);
+        }
+
+    };
+
+    this.gett=function(fa){//
+        var jspath=window.jspath||"js/";
+        for(var f in fa){
+            if(lurl.indexOf('csse')>0||fa[f].indexOf('/')==0)jspath='';
+            var s = document.createElement('scr'+'ipt');
+            s.async = false;
+            if(fa[f].indexOf('?')==-1)fa[f]+='?';
+            s.src = jsserv+jspath+fa[f];
+
+            document.body.appendChild(s);
+            document.getElementById("jgloading1").innerHtml=f+"/"+fa.length;
+        }
+    };
+    this.getimg=function(){
+        jg_loads.imgmaxn=jg_loads.imgn=jg_loads.imgpa.length;
+        if(jg_loads.imgmaxn>0){
+            for(var i=0;i<jg_loads.imgmaxn;i++){
+                var imgobj = new Image();
+                imgobj.src=jg_loads.imgpa[i];
+                if (imgobj.complete) {
+                    jg_loads.imgn=jg_loads.imgn-1;
+                    jQuery("#jgloading1").html(i+"/"+jg_loads.imgpa.length);
+                    if(jg_loads.imgn==0){
+                        jQuery("#jgloading").remove();
+                    }
+                }else{
+                    imgobj.onload = function () {
+                        jQuery("#jgloading1").html( i+"\/"+jg_loads.imgmaxn);
+                        if(i==jg_loads.imgmaxn)jQuery("#jgloading").remove();
+                    };
+                }
+            } ;
+        }else{jQuery("#jgloading").remove();}
+
+
+    };
+    this.get=function(filename,fpath){//fpath==1ä½¿ç¨ç¸å¯¹è·¯å¾ã
+        var jspath=window.jspath||"/js/";
+        if(lurl.indexOf('csse')>0||filename.indexOf('/')==0)jspath='/';
+
+        //hugo 0806
+        var ifloadByoss=false;
+        if(lurl.indexOf('http')!=0||lurl.indexOf('csse')==-1){
+            try{
+                if(typeof(idpg)!="undefined"&&typeof(sj.pg.all)!="undefined"&& htps=='http' &&sj.pg.all[idpg].ifn==1){
+                    jspath=oss_jsUrl+jspath;
+                    ifloadByoss=true;
+                }
+            }catch(ex){}
+        }
+        //hugo 0806
+
+        var strjs='';
+        if(filename.indexOf('.js')>0){
+
+            if(lurl.indexOf('http')!=0){//ææº
+                if(filename.indexOf('/')==0){
+                    filename=filename.substring(1);//ææºä¸å¿é¡»æ¯ç¸å¯¹è·¯å¾
+                }else{
+                    filename=jsserv+jspath+filename;
+                }
+            }else{
+                if(fpath){}else if(filename.indexOf('http')!=0){
+                    filename=(jspath+filename);
+                    if(lurl.indexOf('jgjstest')>0&&filename.indexOf('/g/')>=0)filename=filename.split('.')[0]+'_t.'+filename.split('.')[1];
+
+                    if(jsserv!=''&&filename.indexOf('/')==0)filename=filename.substring(1);
+                    if(filename.indexOf('//')==0)filename=filename.substring(1);
+                    filename=jsserv+filename;
+                }
+            }
+            if(filename.indexOf('?')==-1)filename+='?';
+
+            strjs+="<scr"+"ipt type='text/javascript' src='"+filename+"'></scr"+"ipt>";
+
+        }else if(filename.indexOf(".css")>0){
+            if(fpath){}else if(filename.indexOf('/')!=0&&filename.indexOf('http')!=0)filename=jsserv+imgp+filename;
+            if(filename.indexOf('?')==-1)filename+='?';
+
+            if(ifloadByoss&&filename.indexOf("http")!=0)filename=oss_jsUrl+filename;//hugo 0806
+
+            strjs+="<link rel='stylesheet' type='text/css' href='"+filename+ "' />";
+
+        }else if(filename.indexOf(".ttf")>0){
+            if(fpath){}else if(filename.indexOf('/')!=0&&filename.indexOf('http')!=0)filename=jsserv+imgp+filename;
+            if(filename.indexOf('?')==-1)filename+='?';
+
+            if(ifloadByoss&&filename.indexOf("http")!=0)filename=oss_jsUrl+filename;//hugo 0806
+
+            strjs+="<link rel='stylesheet' type='text/css' href='"+filename+ "' />";
+
+        }else if(filename!=""){
+            if(ifloadByoss&&filename.indexOf("http")!=0)filename=oss_jsUrl+filename;//hugo 0806
+
+            this.imgpa.push(filename);
+        }
+
+
+        return strjs;
+    };
+
+};
+var jg_loads=new jg_loads();
+
+//å¼å¥å¾®ä¿¡æ¥å£
+var jg_jsa=jg_jsa||[];
+if(typeof(js_beforload)=="string"){
+
+}else{
+    js_beforload="";
+}
+var oldJquery=oldJquery||0;
+var oldJqueryPath=oldJqueryPath||'/js/jquery-1.11.1.min.js';
+
+
+if(typeof(idcm)!='undefined')if(idcm==55909)navig.weixin=false;
+jg_jsa=jg_jsa.concat([(!navig.weixin)?"":htps+":\/\/res.wx.qq.com/open/js/jweixin-1.2.0.js",js_beforload,(navig.ie||oldJquery)?oldJqueryPath:"/js/jquery-2.1.1.js","jex.js?2018031707","db.js?2017102505","cod"+galx+".js?2018030812"]);
+
+//ä»¥ä¸å¤æ­å¢å  lurl.indexOf('wxpay.html')==-1 ï¼ç®çæ¯è§£å³å¾®ä¿¡æ¯ä»æ¶æ²¡æweixinex.jsæå¯¼è´çæ¯ä»é¡µé¢éè¯¯bug
+if((lurl.indexOf('gcmi.jsp')>0)&&lurl.indexOf('wxpay.html')==-1) loadjsa=["/js/jquery.ui.core.min.js","path.js",'ani.css', 'jquery.Jcrop.min.css','/up.js?19', '/js/jquery.Jcrop.min.js','/js/jQueryRotate.2.2.js'];
+if(lurl.indexOf('gcm.jsp')>0&&lurl.indexOf('wxpay.html')==-1)loadjsa=["/js/jquery.ui.core.min.js","path.js",'ani.css', 'jquery.Jcrop.min.css','/up.js?19', '/js/jquery.Jcrop.min.js','/js/jQueryRotate.2.2.js','/js/sco.js'];
+if(lurl.indexOf('gls.html')>0&&lurl.indexOf('wxpay.html')==-1) loadjsa=['/js/jquery.sinaEmotion.js','/cmmpl.js',  'uploader.css', '/up.js?101802'];
+
+
+if((lurl.split("?")[0]).indexOf('gsettest.html')==-1 && (lurl.split("?")[0]).indexOf('gseti.html')==-1 && (lurl.split("?")[0]).indexOf('gset.html')==-1&& (lurl.split("?")[0]).indexOf('gset.jsp')==-1 && (lurl.split("?")[0]).indexOf('indexw.jsp')==-1&& (lurl.split("?")[0]).indexOf('wgame.html')==-1 && (lurl.split("?")[0]).indexOf('wgamex.html')==-1 && (lurl.split("?")[0]).indexOf('gls.html')==-1 && (lurl.split("?")[0]).indexOf('indexw.html')==-1 && (lurl.split("?")[0]).indexOf('projects.html')==-1 &&(lurl.split("?")[0]).indexOf('news.jsp')==-1&& (lurl.split("?")[0]).indexOf('/news/newslist.html')==-1 &&(lurl.split("?")[0]).indexOf('/projects.html')==-1&&(lurl.split("?")[0]).indexOf('/service.html')==-1&&(lurl.split("?")[0]).indexOf('/aboutus.html')==-1&& (lurl.split("?")[0]).indexOf('mtyx.6699666996.com/g/reportChart')==-1&& (lurl.split("?")[0]).indexOf('http://app.hanguoyou.org/')==-1){
+    if(window.location.host.indexOf("kxtui")==-1&&window.location.host.indexOf("www.180yin.com")==-1)jg_jsa=jg_jsa.concat(['templet.css?011201']);
+    jg_jsa=jg_jsa.concat(['9.css?2017030206']);
+}
+jg_jsa=jg_jsa.concat(loadjsa);
+
+/*å¤æ­æ¯å¦éè¦æ·»å èªå¨é³ä¹,æ§ä»¶*/
+//&&lurl.indexOf('.jsp')==-1    11.07åæ¶æ¹å¤æ­  -Tim
+if(jg_aj.sj.cm)
+    if(jg_aj.sj.cm.all[jg_aj.idcm]&&jg_aj.sj.cm.all[jg_aj.idcm].cmc!=""){
+        if(jg_jsa.join().indexOf('zepto.min.js')==-1){
+            jg_jsa.push('/js/zepto.min.js');
+        }
+        if(jg_jsa.join().indexOf('jg_sound.js')==-1){
+            jg_jsa.push('/jg_sound.js?dd38');
+        }
+    }
+if(lurl.indexOf('http')!=0)jg_jsa=jg_jsa.concat(['/lconf.js?'+Math.random()]);
+
+jg_loads.gets(jg_jsa);
+
+var whenReady = (function() {
+    var funcs = [];
+    var jgwr_ready = false;
+    function handler(e) {
+        if(lurl.indexOf('ddcsse')>0){alert('fdssss'+jgwr_ready)};
+        if(jgwr_ready) return;
+
+        if(e.type === 'onreadystatechange' && document.readyState !== 'complete') {
+            return;
+        }
+
+        if(lurl.indexOf('ddcsse')>0){
+            alert("jg_readyhh")
+            if (this.caller == null){
+                alert("3.");
+            }
+            else{
+                alert("3."+this.caller);
+            }
+        }
+
+        for(var i=0; i<funcs.length; i++) {
+            funcs[i].call(document);
+        }
+        jgwr_ready = true; //if(lurl.indexOf('idcm=34510')>0){alert(jgwr_ready)};
+        funcs = null;
+    }
+    if(document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', handler, false);
+        document.addEventListener('readystatechange', handler, false);            //IE9+
+        window.addEventListener('load', handler, false);
+
+    }else if(document.attachEvent) {
+        document.attachEvent('onreadystatechange', handler);
+        window.attachEvent('onload', handler);
+
+
+    }
+    return function whenReady(fn) {
+
+        if(jgwr_ready) { fn.call(document); }
+        else { funcs.push(fn); }
+    }
+})();
+
+var jg_ifzc=0;
+function jg_ready() {
+
+    if(jg_ifzc==1)return;//é²æ­¢éå¤
+    jg_ifzc=1;
+    iftouch=j().iftouch();
+    if(lurl.indexOf('.html')==-1&&j().getv('build', '')=='1'){
+        buildhtml(); return;
+    }
+
+    jg_loads.getimg();
+
+    if(window.jg_main)jg_main();
+    if(window.jg_msco)jg_msco();
+
+    if(lurl.indexOf('\/g\/\?')==-1&&lurl.indexOf('\/g\/index.jsp\?')==-1){
+        /*  setTimeout(function(){///ç¾åº¦ç»è®¡,æ¾å°index.jspä¸­
+         var _hmt = _hmt || [];
+         (function() {
+         var hm = document.createElement("script");
+         hm.src = "//hm.baidu.com/hm.js?ce76f6f7e1d093e49bb7ae6f3303c4a8";
+         var s = document.getElementsByTagName("script")[0];
+         s.parentNode.insertBefore(hm, s);
+         })();
+         },3000);*/
+    }
+}
+/**
+ * çæå¹¿åå¾ç
+ */
+function jg_buildAd(json){
+    //å¹¿åç±»åï¼1é»è®¤è¡¨ç¤ºçæä¸å¼ å³ä¸è§å¹¿åå¾ï¼2çæå¤å¼ å¯æ»å¨å¾çï¼
+    var op = json.op || 1;
+    var isfirst=json.isfirst||1;
+    var parentBoxW = json.w || "100%";
+    var parentBoxH = json.h || "100%";
+    var contentBoxId = json.pid || "";
+    var imgW = json.imgw || 300;
+    var imgScale = json.imgscale || "100%";
+    var imgsLength = json.imgslength || 4;          //å±å¤å°å¼ å¾ç
+    var autoRun = json.autorun || 0;                //æ¯å¦èªå¨è½®æ­
+    //å¾çå¯¹è±¡ï¼æcaæ ¼å¼ï¼<img src="xxx" width="100%" />|alert("xxx")`<img src="yyy" width="100%" />|alert("yyy")
+    var imgObj = '<img src="/g/kxdt/css/0.png?1" width="'+imgScale+'" />|jpn();`<img src="/g/kxdt/css/0.png" width="'+imgScale+'" />|jpn();`<img src="/g/kxdt/css/0.png" width="'+imgScale+'" />|jpn();`<img src="/g/kxdt/css/0.png" width="'+imgScale+'" />|jpn();`<img src="/g/kxdt/css/0.png" width="'+imgScale+'" />|jpn();';
+    var banPoint = '<span id="banpoint0" class="y_banpoint"></span><span id="banpoint1" class="x_banpoint"></span><span id="banpoint2" class="x_banpoint"></span>';
+
+    var adStr = '<div class="clearfix" style="overflow: hidden;position: relative;height:'+parentBoxH+';width:'+parentBoxW+';">'
+        +               '<div id="adImgList_'+op+'" style="width:9000px;"></div>'
+        +               '<div id="banpoint" style="position:absolute;bottom:10px;right:10px;"></div>'
+        +           '</div>';
+    if(contentBoxId == ""){
+        j().jalert("pidå¿å¡«");
+    }else{
+        db.sajax("ad|ad@1","all|all","f1>0 and lx="+op+" order by id desc limit "+(op==1?"1":imgsLength)+"|id=22 or id=21","",function(adi,adjson){
+            if(adjson['ad'].a.maxr>0){
+                imgObj = "";
+                banPoint = "";
+                var pointi = 0;
+                if(op==2&&isfirst==1){  //å¤§åè½®æ­ç¬¬ä¸å¾
+                    imgObj += '`<a href="'+adjson['ad@1'].all['22'].curl+'" target="_blank" class="b" style="background-image:url('+(window.location.host.indexOf("mtyx.6699666996.com")==-1?adjson['ad@1'].all['22'].cimg:"/pg/fi/14592/1459221274096.jpg")+');background-size:cover;background-repeat:no-repeat;background-position:50% 50%;height:'+parentBoxH+'"></a>|changepoint(this);';
+                    banPoint += '<span id="banpoint'+(pointi++)+'" i="'+(pointi*1-1)+'" class="x_banpoint" onclick="showbant(this,-1,'+op+')"></span>';
+                }
+                j.each(adjson['ad'].all, function(adk, adn){
+                    //å¾çäºæ·å®ç½ï¼bannerè½®æ­æ ç­¾å¦ä¸è®¾ç½®ï¼aæ ç­¾åimgï¼ï¼å¯è§£å³å¾çæå¨æ¶éè¯¯ä¿åç¹å»äºä»¶é®é¢ã
+                    if(adn.id!=22 && adn!=21){
+                        imgObj += '`<a '+(adn.idcm?'href="/g/?idcm='+adn.idcm+'"':(adn.curl?'href="'+adn.curl+'"':''))+' target="_blank" class="b" style="background-image:url('+adn.cimg+');background-size:cover;background-repeat:no-repeat;background-position:50% 50%;height:'+parentBoxH+';'+(adn.curl?"":"cursor: auto;")+'"></a>|changepoint(this);';
+                        banPoint += '<span id="banpoint'+(pointi++)+'" i="'+(pointi*1-1)+'" class="x_banpoint" onclick="showbant(this,-1,'+op+')"></span>';
+                    }
+                });
+                imgObj = imgObj.substring(1);
+                if(op==2){  //å¤§åè½®æ­ç¬¬å­å¾
+                    imgObj += '`<a href="'+adjson['ad@1'].all['21'].curl+'" target="_blank" class="b" style="background-image:url('+adjson['ad@1'].all['21'].cimg+');background-size:cover;background-repeat:no-repeat;background-position:50% 50%;height:'+parentBoxH+'"></a>|changepoint(this);';
+                    banPoint += '<span id="banpoint'+(pointi++)+'" i="'+(pointi*1-1)+'" class="x_banpoint" onclick="showbant(this,-1,'+op+')"></span>';
+                }
+            }
+            if(op==1 && adjson['ad'].a.maxr==0){
+
+            }else{
+                j("#"+contentBoxId).html(adStr);
+                //bannerè½®æ­å¦ææpointæç¤ºï¼é¡»å°cfunè®¾ç½®ä¸ºjpnï¼ä»¥è§¦åæ­æ¾åæ¹åpointåç¹åè½
+                j().ui({cid:"adImgList_"+op,w:imgW,h:-100,s:0,cfun:"jpn()",ca:imgObj,ncheck: "1",class0:"cent",cxy:"x"});
+                j("#banpoint").html(banPoint);
+                j("#banpoint0").removeClass().addClass('y_banpoint');
+            }
+            if(autoRun)
+                autoRunBanner(op);
+
+            if(typeof(json.func)!='undefined'){
+                db.dofunc(json.func, {});
+            }
+        });
+    }
+}
+function showbant(obj, op,oop){
+    var banpicsi=j(obj).attr('i');
+    if(op>=0)banpicsi=op;
+    if(oop)oop=oop||2;
+    j('#adImgList_'+oop).anim(banpicsi);
+    j("#banpoint").children('[class*="y_"]').removeClass().addClass('x_banpoint');
+    j("#banpoint"+(banpicsi)).addClass('y_banpoint');
+}
+function changepoint(obj){
+    var objid=j(obj).attr('id');
+    var objindex=objid.substring(12);
+    j("#banpoint").children('[class*="y_"]').removeClass().addClass('x_banpoint');
+    j("#banpoint"+(objindex)).addClass('y_banpoint');
+}
+function autoRunBanner(op){
+    var cleng=sj['ad'].a.maxr*1-1;
+    if(op==2){
+        cleng=sj['ad'].a.maxr*1+1;
+    }
+    if(jg_aj.bannerIndex>-1){
+        jg_aj.bannerIndex++;
+        if(jg_aj.bannerIndex>(cleng)){
+            jg_aj.bannerIndex=0;
+        }
+    }else{
+        jg_aj.bannerIndex=0;
+    }
+    //console.log(jg_aj.bannerIndex);
+    showbant(null, jg_aj.bannerIndex,op);
+    setTimeout(function(){
+        autoRunBanner(op);
+    },8000);
+}
+whenReady(jg_ready);
+
+        
+        if(window.location.host.indexOf("kxtui")==-1&&window.location.host.indexOf("gzggo")==-1||window.location.href.indexOf("csse")>-1){
+           document.write('<link rel="stylesheet" href="\/css\/templet.css">');  
+          document.write('<link rel="stylesheet" type="text\/css" id="cssLink" href="/webPriSet/'+window.location.host+'.css" \/>'); 
+       }
+        function jg_msco() {
+            db.sj = jg_aj.sj;
+           
+            if (j().getv("logint", -1) == -1 && j().getv("belogin", -1) != -1) {//强制显示登录
+                dl.build();
+                 
+            } else {
+                
+                if (lurl.indexOf('.html') > 0) {//build生成静态html后，需要根据不同用户读fl和dhm
+                    db.setidus(function () {
+                      jg_msco0();
+                    }, {addt: '|fl|dhm', addq: '|all' + (db.sj.dhm.a.maxr > 0 ? '|all' : ''), addw: "|idus in ({0}) and idcm=" + jg_aj.idcm + " and ctn='rd' order by id desc" + '|idcm=1440533  order by  fs DESC,id DESC  limit 0,100 '});
+                } else {
+                     
+                    db.showidus(function () {//将jsp读出的数据初始化到db.us db.vs等
+                       // if (idcm == 97048){db.jp('/savelog.jsp?',function(){ jg_msco0();},'','logname=97048_1&shtml=\n\n 11 '+(" "+db.idus+lurl.replace(/&/gi,';amp;') ));
+                        //}else{
+                                jg_msco0();
+                        //}
+                        //if(db.role>7)j().ui({ cid: "colBtn",w:120,h:28, z:-1, ncheck: "-2",s:4,marg:0,cfun:'', ca:'刷新数据|buildZixun()`生成html|builddiv()', class0: "_f_16__180 cent _r_5__ff7878_1 x_c_red2"  }); 
+                    }, db.sj);
+                }
+            }
+        }
+        function jg_gzwx(str1) {
+            if(idcm==1385186){
+                 jg_aj.mycgz = 1;
+            }else{
+                str1 = str1 || '游戏必须关注后才能进行';
+                j().jaler(str1 + "<br>" + db.sj.cm.all[jg_aj.idcm].cgz, null, '点此关注|jg_gzwx2()');
+            }
+        }
+        function jg_gzwx2() {
+            var surl = db.sj.cm.all[jg_aj.idcm].cwxgz;
+            if (surl.indexOf('http') != 0)
+                surl = 'http://' + surl;
+            window.location = surl;
+        }
+        function jg_msco0() {
+                 
+             var wxSArr = jg_aj.cwxas.split("，");//op,qzyz,idadd,ifcgz,lx 
+            //lurl.indexOf('csse')>0&&alert(lurl);
+            if (jg_aj.ifWxoath && windowjs == 0&&(wxSArr[0] * 1 || db.sj.pg.all[idpg].pgt>0)) {//db.sj.pg.all[idpg].pgt 整个pg设为强制验证
+    
+                    if (wxSArr[3] * 1)  jg_wx.ifcgz = 1;
+                    //lurl.indexOf('csse')>0&&alert('ddddddd'+lurl);
+                    jg_wx.checkWxoauth(function () {
+                        if (wxSArr[3] * 1&&!jg_wx.isgz) {
+                                jg_gzwx();
+                            }  
+                                 if(ifwgamge==1){
+                                    jg_msco1();
+                                 }else{
+                                     jg_msco2();
+                                 }
+                            
+                    }, wxSArr[2] * 1, wxSArr[4] * 1, (db.sj.pg.all[idpg].pgt>0?1:(wxSArr[1] * 1)));
+            } else {
+                jg_msco1();
+            }
+        }
+        function jg_msco1() {
+            //大游戏，不自动创建用户。lwf 2016-08-16明确：为了搜索引擎和用于记录数据， ||idpg==22981大厅||idpg==23042介绍页要自动创建用户，但是自动创建的帐号要对用户屏蔽。
+            
+            if(ifwgamge==1){ 
+               if(db.idus > 1000 ){
+                 if(db.us.all[db.idus].qq==0&&db.vs.all[db.idus].ctel==''&&db.us.all[db.idus].team==0){//team，1有qq一键登录 2微信登录
+                     if(db.idus>86860000){
+                         db.idus=0;//新的自动生成的用户一律作废。
+                        dl.build();  
+                     }else{
+                        ga.showUserInfo(function(){j('#phbmenu_1').hide()});
+                        j().jalert("请绑定手机号或QQ号，并重置密码,以防游戏帐号丢失");
+                        jg_msco2();
+                     }
+                 }else{ 
+                    jg_msco2();
+                 }
+               }else{
+                  dl.build();  
+                 
+               } 
+            }else if (db.idus > 1000 || (window.weixinex && navig.weixin)) {
+                
+                jg_msco2();
+            }else {
+                dl.autoreg(function () {
+                    
+                    jg_msco2();
+                });
+            }
+        }
+        function jg_msco2() {//数据初始化完毕已有 pg cm us vs fl vs@cm
+            // try{
+                
+            db.myvs=db.vs.all[db.idus];
+            db.myfl={id:-1};
+            if(db.sj.fl.all.sx)db.myfl=j(db.sj.fl.all).jgrep('ctn','rd','json0','idus',db.idus);
+            
+            db.ffl={id:-1};
+            if(jg_aj.fid>0){
+                if(db.sj['fl@fid'].all[jg_aj.fid]){
+                    db.ffl=db.sj['fl@fid'].all[jg_aj.fid];
+                }else{  if(confirm("对不起，该用户的游戏记录已清除！现在跳回你的游戏记录。")){  
+                    window.location=j().getUrl("fid",'');
+                    }
+                }
+             } 
+            if(db.ffl.id==-1)db.ffl=db.myfl; 
+                
+            j("#imoregame").html(j().ui({cid: "imoreclose", z: -2, w: 36, h: 46, s: 0, ca: "×|ga.closeMore()", class0: "yaheif _f_22__190 cent"}) + j().ui({cid: "imoregame1", z: -2, w: 250, h: 46, s: 0, ca: "&nbsp;&nbsp;<span style='color:#FBC746;' id='imoretxt1'></span>&nbsp;<span style='color:#46B8FB;' id='imoretxt2'></span>&nbsp;<img src='/css/imoregamepic.png' width='39px' style='vertical-align: middle;'/><div style='position:absolute;top:0px;right:0px;width:10px;height:10px;border-radius:10px;-webkit-border-radius:10px;background-color:rgb(255, 34, 34);'></div>|sco.more(-3)", class0: "yaheif _f_20__230 lft _r_16p1p1p16p"}));
+
+            if (ga.checkRole({}) == 1 && ifwgamge!=1 && idpg != 23077) {
+                if (db.sj["ad@1"].a.maxr > 0 && j(db.sj["ad@1"].all).topr(0).cimg!="") {
+                    j("#imoregame1_0").html('<img src="' + j(db.sj["ad@1"].all).topr(0).cimg + '" width="100%" height="100%" />');
+                    j("#imoregame1_0").attr(sclick, "ga.gago('/gset.jsp',1)");//g/?idcm=" + j(db.sj["ad@1"].all).topr(0).idcm + "     2018-01-22改为gset.jsp  -Tim
+                }
+                j("#imoregame").show();
+            }
+            if ((db.sj.cm.all[idcm].cgz != "" || db.sj.cm.all[idcm].cgz != 0) && idpg != 23077) {
+                j("#imoregame1_0_0").html(db.sj.cm.all[idcm].cgz).addClass("cent");
+                j("#imoregame").show();
+            }
+            if(idpg==23202){//2016-12-13 lwf iframe中跳过微信分享初始化，
+                jg_msco3();return;
+            } 
+             
+            sco.ini(function () {
+                gamesd = db.gett();
+                if((idpg==23077||idpg==23086) && j().isAndroid()){
+                        j("#jgviewport").attr("content","width=540,initial-scale="+(window.screen.width/540)+",target-densitydpi=high-dpi, user-scalable=no");
+                    }
+                if (db.sj.cm.all[jg_aj.idcm] && db.sj.cm.all[jg_aj.idcm].chsd != "" && db.sj.cm.all[jg_aj.idcm].ctnus != "" && db.sj.cm.all[jg_aj.idcm].ctnus.indexOf('[进入时不显示]') == -1) {
+                    //  var ccup=1;
+                     //{issqd:ccup}
+                    if (lurl.indexOf('csse') > -1)
+                        alert('df1' + db.idus);
+                    /*为了兼容ifphtag，将配置移前到i.jsp*/
+                    var jsonijspin = {};
+                    var jsonijsp = ga._getUserInfo(0);
+
+                    if (jQuery.isEmptyObject(sco.scorebilljsontg) && jsonijsp["ph"] && jsonijsp["ph"]["btext"]) {
+                        jsonijspin = jsonijsp["ph"];
+                    }
+                    if (typeof (jsonijspin.ifphtag) == "undefined")
+                        jsonijspin.ifphtag = 2;
+                    /*end*/
+                    sco.scorebill(0, 0, 0, 0, '', '', jsonijspin, function () {
+                        jg_msco3()
+                    });
+                } else {
+                    jg_msco3()
+                }
+
+            });
+            // }catch(ex){alert(ex)}
+        }
+        function jg_msco3() { 
+            if(ifwgamge==1){
+              loadWebGame();
+              
+            }else{
+               eval(db.sj.pg.all[jg_aj.idpg].cini); //调用微信自动登录获取用户db.idus
+            }
+            setTimeout(function () {
+                ga.atuochangeUsinfo(1);
+            }, 2400);
+           // setTimeout(function () {    2017.2.9  去掉加载游戏背景音乐setTimeout并修改音乐加载方法，解决iso音乐进入不自动播放问题  -Tim
+                if (db.sj.cm.all[jg_aj.idcm].cmc){
+                    //db.dofunc("jg_audio.audioLoop=true;jg_audio.addAudio('" + db.sj.cm.all[jg_aj.idcm].cmc + "');");
+                    //db.dofunc("jg_sound.runBg('" + db.sj.cm.all[jg_aj.idcm].cmc + "');");
+                    if(j("#audio_box").length==0){
+                        j("body").append('<audio id="audio_box" autoplay="autoplay" loop="loop" src="'+db.sj.cm.all[jg_aj.idcm].cmc+'"></audio>');
+                        jg_sound.playBg();
+                    }
+                    if(j("#audio_pic_btn").length==0){
+                        j("body").append('<span id="audio_pic_btn" class="css_sprite01 audio_open"></span>');
+                        if(idcm==1354366 || idcm==1429526){
+                            j("#audio_pic_btn").css({"left":"inherit","right":"46px"});
+                        }
+                        if(idcm==126766){
+                            if(j("#audiosyy").length==0){
+                                j("body").append('<audio id="audiosyy" src="/g/dati/css/yyy.mp3"></audio>');
+                                document.getElementById("audiosyy").play();
+                                document.addEventListener("WeixinJSBridgeReady", function () {
+                                   document.getElementById("audiosyy").play();
+                                }, false);
+                            }
+                            j("#audio_pic_btn").css({'right': '25px','left': 'inherit','top': '76px'});
+                        }
+                        if(idpg==23142 || idcm==1440168){
+                            j("#audio_pic_btn").hide();
+                        }
+                        j("#audio_pic_btn").click(function(){
+                            if(jg_sound.ifBgPlay==1){
+                                jg_sound.stopBg();
+                                j("#audio_pic_btn").removeClass("audio_open").addClass("audio_close");  
+                            }else{
+                                jg_sound.playBg();
+                                j("#audio_pic_btn").removeClass("audio_close").addClass("audio_open");  
+                            }
+                        });
+                    }
+                }
+           // }, 3000);
+
+            /*内部统计代码*/
+            /*if(idcm==13928){
+         
+             }else if(idcm==135498||idpg==1353){ */
+
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ')
+                    c = c.substring(1);
+                if (c.indexOf("_pk_") > -1) {
+                    var date = new Date();
+                    date.setTime(date.getTime() - 10000000);
+                    document.cookie = ca[i].split("=")[0] + "=0; expires=" + date.toGMTString() + "; path=/";
+                }
+            }
+            //if(idpg==23113||idpg==23111||idpg==22981||idpg==23042){}else{
+
+            setTimeout(function () {///百度统计，从load.js中移过来
+                var baidujs_id = 'ce76f6f7e1d093e49bb7ae6f3303c4a8';
+                if (idcm == 135498)
+                    baidujs_id = 'f763d1a870c525609c96e7944c3e7c13';
+
+
+                if (db.ifjp == 0 && idcm != 30845 && idcm != 55909 && idcm != 90357 && idcm != 89368) {
+                    var _hmt = _hmt || [];
+                    (function () {
+                        var hm = document.createElement("script");
+                        hm.src = "//hm.baidu.com/hm.js?" + baidujs_id;
+                        var s = document.getElementsByTagName("script")[0];
+                        s.parentNode.insertBefore(hm, s);
+                        j('iframe').each(function(){
+                            var sstrid=j(this).attr('id');
+                            if(sstrid==("__WeixinJSBridgeIframe_SetResult")||sstrid=="ping_iframe"||sstrid=="gameIframe"||sstrid=="__WeixinJSBridgeIframe"){}else{
+                                db.jp('/savelog.jsp?',function(){},'','shtml=\n\n'+(sstrid+" "+j(this).attr('src')+window.location  ));
+                                //j().jalert("请截图给公众号：开心推<br>"+sstrid+j(this).attr('src')+"<br>")
+                            }
+                        })
+                    })();
+                }
+            }, 5000);
+            //}
+
+            /*内部统计代码*/
+
+            /* */
+        }
+        ;
+
+        //自动回调结果到第三方平台
+        function autoCallBackThird(i, json) {
+            var turi = decodeURIComponent(j().getv("kxuri", ""));
+            if (turi != "") {
+                //如果有返回链接的时候
+                if (turi.indexOf('http:') == -1)
+                    turi = "http://" + turi;
+                var kxtyp = j().getv("kxtyp", 0);
+                var fs = json.fs;
+
+                //获得本局分数排名
+                sco.getUsePm({
+                    score: fs,
+                    wherePh: " and idus=" + db.idus + " ",
+                    limit: 2,
+                    func: function (i, jsona) {
+                        var mfs = 0;//历史最高分
+                        var cpm = jsona.mypy;//当前排名
+                        j.each(jsona.data['fl@3'].all, function (ii, nn) {
+                            if (nn.mfs > mfs)
+                                mfs = nn.mfs;
+                        });
+                        if (kxtyp == 0) {
+                            //插入数据后返回
+                            reducePostThird({url: turi, kxtyp: kxtyp, score: fs, mscore: mfs, rank: cpm, win: -1, winMsg: "", error: ""});
+
+                        } else if (kxtyp == 1) {
+                            //抽奖后返回  
+                            db.jp("/prizeCheck.jsp?option=011&idcm=" + idcm + "", function (ii, jsonb) {
+                                reducePostThird({url: turi, kxtyp: kxtyp, score: fs, mscore: mfs, rank: cpm, win: jsonb.IsWin, winMsg: jsonb.Msg, error: ""});
+                            });
+                        }
+                    }
+                });
+            }
+        }
+        ;
+        function reducePostThird(json) {
+            var f = new FormData();
+            f.append("aid", j().getv("aid", ""));
+            f.append("idcm", idcm);
+            j.each(json, function (i, n) {
+                if (i != "url")
+                    f.append(i, n);
+            });
+            j.ajax({
+                url: json.url,
+                type: "POST",
+                data: f,
+                cache: false,
+                contentType: false,
+                processData: false,
+                forceSync: false,
+                /* xhr: function() { 
+                 var i = j.ajaxSettings.xhr();
+                 if (i.upload) {
+                 i.upload.addEventListener("progress", function(m) {
+                 var l = 0;
+                 var n = m.loaded || m.position;
+                 var k = m.total || e.totalSize;
+                 if (m.lengthComputable) {
+                 l = Math.ceil(n / k * 100);
+                 } 
+                 }, false)
+                 }
+                 return i 
+                 },*/
+                success: function (rs, i, k) {
+
+                },
+                error: function (k, i, rs) {
+
+                },
+                complete: function (i, rs) {
+
+                }
+            });
+        }
+        ;
+        function buildhtml() {
+            j.ajax({type: 'post', async: false, url: '/buildhtml.jsp', data: {'str': j('html').html(), 'fntarget': idcm + '.html'}, success: function () {
+                    alert('ok');
+                }})
+        }
+
+        
+        function loadWebGame(){
+             var strSign='';
+             var  gameUrl ="";
+             if(idpg>0&&db.sj.pg.all[idpg]){
+                gameUrl =db.sj.pg.all[idpg].cgurl;
+             }
+             if(gameUrl==""||gameUrl.indexOf('http')==-1){
+                gameUrl= "/g/?idcm=322975"; 
+             }
+             gameUrl=decodeURIComponent(gameUrl);
+             if (gameUrl.indexOf("?")>-1) {
+                 gameUrl +="&";
+             } else {
+                 gameUrl +="?";
+             }
+             gameUrl=gameUrl+ "kxt_idus=" + db.idus+"&sign="+strSign+"&paystate=-1&idcm="+idcm+"&dtidcm=322975";
+             window.gameUrl=gameUrl;
+             if(strSign.length<5){
+                 window.location.reload();
+                 return;
+             }
+             if (window.top != window.self) {
+                 console.log('beGet:' + gameUrl)
+                 location.href = gameUrl;
+                 return;
+             } else {
+                 sco.addFl(0,function(i,json){
+                    window.shareData.imgUrl = '';
+                    //window.shareData.timeLineLink = '';
+                    var height = j().getch();
+                    j("#gameIframe").height(height);
+                    j("#gameIframeDiv").height(height);
+                    j("#gameIframe").attr("src",gameUrl); 
+                 });
+             }
+        }
+        function builddiv(){
+            if(confirm("确定生成吗？")==true){
+                    j.ajax({type: 'post',async: false,url: '/buildhtml.jsp',data:{'str':j('#newaside').html(),'fn':'/c1/i.jsp'} ,success: function(){
+                        alert('ok');
+                    }});
+                }
+            }
+    function buildhtmlmain(){
+     j.ajax({type: 'post',async: false,url: '/buildhtml.jsp',data:{'str':j('#htmlmain').html(),'fntarget':idcm+'_main.html'} ,success: function(){
+              alert('ok');
+          }})
+      }
+    </script>
+</html>
